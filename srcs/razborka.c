@@ -14,22 +14,22 @@
 
 void	razborka(t_parser *su, char **line)
 {
-	if (*(*line + su->column) == SEPARATOR_CHAR && ++su->column)
-		add_list(&su->tokens, cne(su, SEPARATOR));
+	if (*(*line + su->column) == ',' && ++su->column)
+		add_list(&su->list, cne(su, SEPARATOR));
 	else if (*(*line + su->column) == '\n' && ++su->column)
-		add_list(&su->tokens, cne(su, NEW_LINE));
+		add_list(&su->list, cne(su, NEW_LINE));
 	else if (*(*line + su->column) == '.')
 		choos_a(su, *line, su->column++, cne(su, COMMAND));
-	else if (*(*line + su->column) == DIRECT_CHAR && ++su->column)
+	else if (*(*line + su->column) == '%' && ++su->column)
 	{
-		if (*(*line + su->column) == LABEL_CHAR && ++su->column)
+		if (*(*line + su->column) == ':' && ++su->column)
 			choos_a(su, *line, su->column - 2, cne(su, DIRECT_LABEL));
 		else
 			choos_dig(su, *line, su->column - 1, cne(su, DIRECT));
 	}
 	else if (*(*line + su->column) == '\"')
 		choos_str(su, line, su->column, cne(su, STRING));
-	else if (*(*line + su->column) == LABEL_CHAR)
+	else if (*(*line + su->column) == ':')
 		choos_a(su, *line, su->column++, cne(su, INDIRECT_LABEL));
 	else
 		choos_dig(su, *line, su->column, cne(su, INDIRECT));

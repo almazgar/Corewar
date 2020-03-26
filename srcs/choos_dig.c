@@ -26,7 +26,7 @@ void	choos_dig(t_parser *su, char *line, unsigned start, t_token *list)
 		&& (list->type == DIRECT || is_limit(line[su->column])))
 	{
 		list->content = data_to_list(su, line, start);
-		add_list(&su->tokens, list);
+		add_list(&su->list, list);
 	}
 	else if (list->type != DIRECT)
 	{

@@ -17,7 +17,7 @@ int	is_registr(const char *a)
 	int	i;
 
 	i = 0;
-	if (ft_strlen(a) >= 2 && ft_strlen(a) <= 3 && a[i] == REG_CHAR)
+	if (ft_strlen(a) >= 2 && ft_strlen(a) <= 3 && a[i] == 'r')
 	{
 		i++;
 		while (ft_isdigit(a[i]))

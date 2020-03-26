@@ -33,5 +33,5 @@ void	choos_str(t_parser *su, char **line, unsigned start, t_token *list)
 	if (end - su->column != *line)
 		refresh_line(line, end - su->column);
 	su->column++;
-	add_list(&su->tokens, list);
+	add_list(&su->list, list);
 }

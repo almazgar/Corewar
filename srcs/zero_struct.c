@@ -14,19 +14,19 @@
 
 t_parser	*zero_struct(int fd)
 {
-	t_parser	*stru;
+	t_parser	*su;
 
-	if (!(stru = (t_parser *)ft_memalloc(sizeof(t_parser))))
+	if (!(su = (t_parser *)ft_memalloc(sizeof(t_parser))))
 		ft_putstr("ERR_PARSER_INIT");
-	stru->fd = fd;
-	stru->row = 0;
-	stru->column = 0;
-	stru->pos = 0;
-	stru->op_pos = 0;
-	stru->name = NULL;
-	stru->comment = NULL;
-	stru->code = NULL;
-	stru->code_size = 0;
-	stru->labels = NULL;
-	return (stru);
+	su->fd = fd;
+	su->row = 0;
+	su->column = 0;
+	su->pos = 0;
+	su->op_pos = 0;
+	su->name = NULL;
+	su->comment = NULL;
+	su->code = NULL;
+	su->code_size = 0;
+	su->labels = NULL;
+	return (su);
 }

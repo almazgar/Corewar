@@ -6,31 +6,30 @@
 /*   By: lgarse <lgarse@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/24 10:52:22 by almazg            #+#    #+#             */
-/*   Updated: 2020/03/24 14:30:22 by almazg           ###   ########.fr       */
+/*   Updated: 2020/03/25 13:03:06 by almazg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/asm.h"
 
-void	recognize_1(t_parser *stru)
+void	recognize_1(t_parser *su)
 {
 	ssize_t	size;
 	char	*line;
 
-	while (++stru->row
-		&& !(stru->column = 0)
-		&& (size = get_next_line(stru->fd, &line)) > 0)
+	while (++su->row && !(su->column = 0)
+		&& (size = get_next_line(su->fd, &line)) > 0)
 	{
-		while (line[stru->column])
+		while (line[su->column])
 		{
-			skip_probel(stru, line);
-			no_comment(stru, line);
-			if (line[stru->column])
-				razborka(stru, &line);
+			skip_probel(su, line);
+			no_comment(su, line);
+			if (line[su->column])
+				razborka(su, &line);
 		}
 		ft_strdel(&line);
 	}
 	if (size == -1)
 		ft_putstr("ERR_READ_FILE");
-	add_list(&(stru->tokens), cne(stru, END));
+	add_list(&(su->list), cne(su, END));
 }
