@@ -6,7 +6,7 @@
 /*   By: avenonat <avenonat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/07 15:22:03 by avenonat          #+#    #+#             */
-/*   Updated: 2020/03/24 14:55:57 by almazg           ###   ########.fr       */
+/*   Updated: 2020/03/29 17:05:52 by almazg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ typedef struct			s_file
 	char				comment[COMMENT_LENGTH];
 	int					a;
 	char				zero[T_IND];
+	int 				cb_line;   // количество байт от начала (1)
+	int 				fd;
 }						t_file;
 
 typedef struct 			s_exec
@@ -39,6 +41,12 @@ typedef struct 			s_exec
 	char 				*direct_label;
 	char 				sym1;
 	int 				number;
+	сhar				*a1;
+	шnt					ta1;
+	сhar				*a2;
+	int					ta2;
+	char				*a3;
+	int					ta3;
 	struct s_file		*next;
 }						t_exec;
 
@@ -144,9 +152,9 @@ void					including_magic(int text);
 void					write_error(char *str);
 t_parser				*zero_struct(int fd);
 void					recognize_1(t_parser *su);
-void					skip_probel(t_parser *su, const char *line);
+void					skip_probel(t_file *ssl, const char *line);
 int						is_whitespace(int c);
-void					no_comment(t_parser *su, const char *li);
+void					no_comment(t_file *ssl, const char *li);
 void					razborka(t_parser *su, char **line);
 t_token					*cne(t_parser *su, t_type type);
 void					add_list(t_token **list, t_token *new);
@@ -162,6 +170,10 @@ char					*connecting_people(char **s1, char **s2);
 void					move_posa(t_parser *su, const char *line);
 void					refresh_line(char **line, char *ptr);
 int						is_registr(const char *a);
+void					take_label(char *line, t_file *ssl, t_label **list, t_exec *com);
+t_label					*cnl(char *name, int byte_c);
+void					add_label(t_label **list, t_label *new);
+t_label					*zero_label();
 
 #endif
 
