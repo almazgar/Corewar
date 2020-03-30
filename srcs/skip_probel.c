@@ -12,8 +12,8 @@
 
 #include "../includes/asm.h"
 
-void	skip_probel(t_parser *su, const char *line)
+void	skip_probel(t_file *ssl, const char *line)
 {
-	while (is_whitespace(line[su->column]))
-		su->column++;
+	while (is_whitespace(line[ssl->a]))
+		ssl->a++;
 }

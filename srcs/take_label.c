@@ -6,7 +6,7 @@
 /*   By: lgarse <lgarse@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/27 09:52:44 by almazg            #+#    #+#             */
-/*   Updated: 2020/03/29 13:51:32 by almazg           ###   ########.fr       */
+/*   Updated: 2020/03/30 13:45:04 by almazg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,16 +37,21 @@ void	take_label(char *line, t_file *ssl, t_label **list, t_exec *com)
 			write_error("ERROR_STR_LABEL");
 		add_label(list, cnl(name, ssl->cb_line));
 		ssl->a = ssl->a + i + 1;
+		ft_putstr("label_name is ");
 		ft_putstr(name);
 		write(1, "\n",1);
 	}
-	else if((i) && is_limit(line[ssl->a + i]))
+	else if ((i) && is_limit(line[ssl->a + i]))
 	{
 		if (!(name = ft_strsub(line, ssl->a, i)))
 			write_error("ERROR_STR_OPERATOR");
-		// запись регистра
-		if (!(is_registr(name))) // это не регистр ?
-			// вызов распознавания команды (оператора)
-			compare(ssl, line, ssl->a + i, com);
+		ssl->a = ssl->a + i;
+		if (!(is_registr(name)) && 1 < i && i < 6) // это не регистр ?
+			// вызов распознавания команды (оператора) i - длина команды от 2 до 5 символов
+			compare(ssl, line, i, com);
+		else
+			write_error("WRONG_OPERATOR");
 	}
+	else
+		write_error("WRONG_STRING");
 }

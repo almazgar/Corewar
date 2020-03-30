@@ -6,7 +6,7 @@
 /*   By: avenonat <avenonat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/07 15:22:00 by avenonat          #+#    #+#             */
-/*   Updated: 2020/03/24 15:02:16 by almazg           ###   ########.fr       */
+/*   Updated: 2020/03/27 14:41:05 by almazg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ int		main(int argc, char **argv)
 	int		i;
 	int		j;
 	int		fd;
-//	char    *line;
+	char    *line;
 	t_file	*ssl;
-	t_parser	*stroka;
+//	t_parser	*stroka;
 
 	i = 1;
 	j = 0;
@@ -56,12 +56,14 @@ int		main(int argc, char **argv)
 		}
 	}
 		fd = open(argv[i], O_RDONLY);
-//		if (fd = open(argv[i], O_RDONLY) == -1)
-//			write_error("DOESNT READ FILE");
-//		get_next_line(fd, &line);
-		stroka = zero_struct(fd);
-		recognize_1(stroka);
-//		parsing(line, ssl);
+		if ((fd = open(argv[i], O_RDONLY)) == -1)
+			write_error("DOESNT READ FILE");
+		get_next_line(fd, &line);
+		ft_putstr(line);
+		ssl->fd = fd;
+//		stroka = zero_struct(fd);
+//		recognize_1(stroka);
+		parsing(line, ssl);
 //		converting(ssl);
 		close(fd);
 //

@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cnl.c                                              :+:      :+:    :+:   */
+/*   cnr.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: almazg <almazg@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/27 10:41:52 by almazg            #+#    #+#             */
-/*   Updated: 2020/03/28 09:25:29 by almazg           ###   ########.fr       */
+/*   Created: 2020/03/29 13:53:13 by almazg            #+#    #+#             */
+/*   Updated: 2020/03/29 13:53:13 by almazg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/asm.h"
 
-t_label		*cnl(char *name, int byte_c)
-{
-	t_label	*temp;
-
-	if (!(temp = (t_label *)ft_memalloc(sizeof(t_label))))
-		write_error("ERROR_LABEL_INIT");
-	temp->name = name;
-	temp->op_pos = byte_c;
-	temp->next = NULL;
-	return (temp);
-}
+//t_label		*cnr(char *name)
+//{
+//	t_exec	*temp;
+//
+//	if (!(temp = (t_exec *)ft_memalloc(sizeof(t_exec))))
+//		write_error("ERROR_REGISTR_INIT");
+//	temp->name = name;
+//	temp->op_pos = byte_c;
+//	temp->mentions = NULL;
+//	temp->next = NULL;
+//	return (temp);
+//}

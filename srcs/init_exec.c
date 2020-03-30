@@ -24,6 +24,13 @@ t_exec		*init_exec(void)
 	temp->direct_label = NULL;
 	temp->sym1 = 0;
 	temp->number = 0;
+	temp->a1 = NULL;
+	temp->ta1 = 0;
+	temp->a2 = NULL;
+	temp->ta2 = 0;
+	temp->a3 = NULL;
+	temp->ta3 = 0;
 	temp->next = NULL;
+
 	return (temp);
 }

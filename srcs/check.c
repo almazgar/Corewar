@@ -51,7 +51,7 @@ void	check_name(int text, char *line, t_file *ssl)
 	while (line[ssl->a] != '.' && line[ssl->a])
 		(ssl->a)++;
 	ft_strncpy(ssl->name, &line[ssl->a], 5);
-	printf("%s\n", ssl->name);
+	ft_printf("%s\n", ssl->name);
 	if (line[ssl->a] == '.' && ft_strcmp(ssl->name, ".name") == 0)
 	{
 		ssl->a += 4;

@@ -12,9 +12,9 @@
 
 #include "../includes/asm.h"
 
-void	no_comment(t_parser *su, const char *li)
+void	no_comment(t_file *ssl, const char *li)
 {
-	if (li[su->column] == COMMENT_CHAR || li[su->column] == ALT_COMMENT_CHAR)
-		while (li[su->column] && li[su->column] != '\n')
-			su->column++;
+	if (li[ssl->a] == COMMENT_CHAR || li[ssl->a] == ALT_COMMENT_CHAR)
+		while (li[ssl->a] && li[ssl->a] != '\n')
+			ssl->a++;
 }

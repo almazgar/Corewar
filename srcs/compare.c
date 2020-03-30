@@ -16,7 +16,7 @@ void	compare(t_file *ssl, char *line, int j, t_exec *com)
 {
 	char		temp[0];
 	printf("%d\n", j);
-	printf("%s", &line[ssl->a - j]);
+	ft_putstr(&line[ssl->a - j]);
 	if (ft_strncmp(&line[ssl->a - j], "live", j) == 0)
 		live(ssl, line, com);
 //		*temp = 1;
