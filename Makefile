@@ -6,7 +6,7 @@
 #    By: avenonat <avenonat@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/03/03 13:49:33 by avenonat          #+#    #+#              #
-#    Updated: 2020/03/24 15:00:32 by almazg           ###   ########.fr        #
+#    Updated: 2020/04/01 17:14:20 by almazg           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,12 @@ SRC =			asm.c init_struct.c including_magic.c write_error.c parsing.c\
                 cne.c add_list.c choos_a.c data_to_list.c is_limit.c\
                 choos_dig.c choos_str.c connecting_people.c move_posa.c\
                 refresh_line.c is_registr.c error_lex.c\
+                add_label.c take_label.c cnl.c zero_label.c\
+                take_arg1.c no_separator.c take_arg2.c\
+                inst_aff.c inst_lfork.c inst_fork.c inst_live.c\
+                inst_zjmp.c inst_lld.c inst_ld.c inst_st.c\
+                inst_add.c take_arg3.c inst_sub.c inst_and.c\
+                inst_or.c inst_xor.c inst_ldi.c inst_lldi.c inst_sti.c\
 
 OBJ =			$(SRC:%.c=%.o)
 
