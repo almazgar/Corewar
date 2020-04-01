@@ -6,37 +6,37 @@
 /*   By: avenonat <avenonat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/13 13:52:13 by avenonat          #+#    #+#             */
-/*   Updated: 2020/04/01 10:07:52 by almazg           ###   ########.fr       */
+/*   Updated: 2020/04/01 14:17:40 by almazg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/asm.h"
-
-void	live(t_file *ssl, char *line, t_exec *com)
-{
-	int j;
-
-	j = 0;
-	take_arg1(line, ssl, com);
-
-	ft_putstr("  ARG1 is ");
-	ft_putendl(com->a1);
-	ft_putstr("type arg1 is ");
-	ft_putnbr(com->ta1);
-	ft_putendl("  _______ ");
-
-	if (com->ta1 != 2 && com->ta1 != 3)
-		write_error("ERROR_ARGUMENT_LIVE_COMMAND");
-	com->n_bytes = 5;
-	com->inst = 1;
-	while (line[ssl->a] && is_whitespace(line[ssl->a]))
-		ssl->a = ssl->a + 1;
-	if (line[ssl->a] == '#' || line[ssl->a] == ';')
-		while (line[ssl->a] && line[ssl->a] != '\n')
-			ssl->a = ssl-> a + 1;
-	else if (line[ssl->a] != '\n' && line[ssl->a] != '\0')
-		write_error("ALLOW_ONLY_ONE_ARGUMENT_TO_LIVE");
-	write_error("FINISH");  // Это для проверки окончания команды
+//#include "../includes/asm.h"
+//
+//void	live(t_file *ssl, char *line, t_exec *com)
+//{
+//	int j;
+//
+//	j = 0;
+//	take_arg1(line, ssl, com);
+//
+//	ft_putstr("  ARG1 is ");
+//	ft_putendl(com->a1);
+//	ft_putstr("type arg1 is ");
+//	ft_putnbr(com->ta1);
+//	ft_putendl("  _______ ");
+//
+//	if (com->ta1 != 2 && com->ta1 != 3)
+//		write_error("ERROR_ARGUMENT_LIVE_COMMAND");
+//	com->n_bytes = 5;
+//	com->inst = 1;
+//	while (line[ssl->a] && is_whitespace(line[ssl->a]))
+//		ssl->a = ssl->a + 1;
+//	if (line[ssl->a] == '#' || line[ssl->a] == ';')
+//		while (line[ssl->a] && line[ssl->a] != '\n')
+//			ssl->a = ssl-> a + 1;
+//	else if (line[ssl->a] != '\n' && line[ssl->a] != '\0')
+//		write_error("ALLOW_ONLY_ONE_ARGUMENT_TO_LIVE");
+//	write_error("FINISH");  // Это для проверки окончания команды
 
 //	ft_putchar(line[ssl->a]);
 //	ft_putendl("  ______ ");
@@ -83,52 +83,52 @@ void	live(t_file *ssl, char *line, t_exec *com)
 //	printf("%d", com->direct);
 //	com->n_bytes = 5;
 //	printf("%d", com->n_bytes);
-}
+//}
 
-void	ld(t_file *ssl, char *line, t_exec *com)
-{
+//void	ld(t_file *ssl, char *line, t_exec *com)
+//{
 //	int j;
 //
 //	j = 0;
-	com->inst = 2;
-	com->n_bytes = 7;
-
-	take_arg1(line, ssl, com);
-
-
-
-	if (com->ta1 < 2 || com->ta1 > 5)
-		write_error("ERROR_TYPE_ARGUMENT_LD_COMMAND");
-
-	no_separator(ssl, line);
-
-	take_arg2(line, ssl, com);
-
-	ft_putstr("  ARG1 is ");
-	ft_putendl(com->a1);
-	ft_putstr("type arg1 is ");
-	ft_putnbr(com->ta1);
-	ft_putendl("  _______ ");
-	ft_putstr("  ARG2 is ");
-	ft_putendl(com->a2);
-	ft_putstr("type arg2 is ");
-	ft_putnbr(com->ta2);
-	ft_putendl("  _______ ");
-
-	if (com->ta2 != 1)
-		write_error("ERROR_TYPE_ARGUMENT_LD_COMMAND");
-
-	com->n_bytes = 5;
-	com->inst = 1;
-	while (line[ssl->a] && is_whitespace(line[ssl->a]))
-		ssl->a = ssl->a + 1;
-	if (line[ssl->a] == '#' || line[ssl->a] == ';')
-		while (line[ssl->a] && line[ssl->a] != '\n')
-			ssl->a = ssl-> a + 1;
-	else if (line[ssl->a] != '\n' && line[ssl->a] != '\0')
-		write_error("ALLOW_ONLY_TWO_ARGUMENT_TO_LD");
-	write_error("FINISH");  // Это для проверки окончания команды
-}
+//	com->inst = 2;
+//	com->n_bytes = 7;
+//
+//	take_arg1(line, ssl, com);
+//
+//
+//
+//	if (com->ta1 < 2 || com->ta1 > 5)
+//		write_error("ERROR_TYPE_ARGUMENT_LD_COMMAND");
+//
+//	no_separator(ssl, line);
+//
+//	take_arg2(line, ssl, com);
+//
+//	ft_putstr("  ARG1 is ");
+//	ft_putendl(com->a1);
+//	ft_putstr("type arg1 is ");
+//	ft_putnbr(com->ta1);
+//	ft_putendl("  _______ ");
+//	ft_putstr("  ARG2 is ");
+//	ft_putendl(com->a2);
+//	ft_putstr("type arg2 is ");
+//	ft_putnbr(com->ta2);
+//	ft_putendl("  _______ ");
+//
+//	if (com->ta2 != 1)
+//		write_error("ERROR_TYPE_ARGUMENT_LD_COMMAND");
+//
+//	com->n_bytes = 5;
+//	com->inst = 1;
+//	while (line[ssl->a] && is_whitespace(line[ssl->a]))
+//		ssl->a = ssl->a + 1;
+//	if (line[ssl->a] == '#' || line[ssl->a] == ';')
+//		while (line[ssl->a] && line[ssl->a] != '\n')
+//			ssl->a = ssl-> a + 1;
+//	else if (line[ssl->a] != '\n' && line[ssl->a] != '\0')
+//		write_error("ALLOW_ONLY_TWO_ARGUMENT_TO_LD");
+//	write_error("FINISH");  // Это для проверки окончания команды
+//}
 //	while (line[ssl->a] == ' ' || line[ssl->a] == '\t')
 //		(ssl->a)++;
 //	if (line[ssl->a] == '%')
