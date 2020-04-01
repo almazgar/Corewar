@@ -6,7 +6,7 @@
 /*   By: avenonat <avenonat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/07 15:22:03 by avenonat          #+#    #+#             */
-/*   Updated: 2020/03/29 18:59:31 by almazg           ###   ########.fr       */
+/*   Updated: 2020/04/01 17:14:20 by almazg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ typedef struct			s_file
 	char				comment[COMMENT_LENGTH];
 	int					a;
 	char				zero[T_IND];
+	int 				fd;
 }						t_file;
 
 typedef struct 			s_exec
@@ -31,7 +32,10 @@ typedef struct 			s_exec
 	int 				code_type;
 	char 				inst;
 	char 				*reg;
+	int 				sym;
 	char 				*direct_label;
+	int 				sym1;
+	int 				number;
 	int 				direct;
 	int 				n_bytes;
 	char				*a1;
@@ -59,7 +63,7 @@ void					check_comment(int text, char *line, t_file *ssl);
 t_exec					*check_exec(char *line, t_file *ssl);
 char					*strncpy_dog(char *dst, const char *src, size_t len);
 void					compare(t_file *ssl, char *line, int j, t_exec *com);
-void 					compare_2(t_file *ssl, char *line, int j);
+void 					compare_2(t_file *ssl, char *line, int j, t_exec *com);
 void					live(t_file *ssl, char *line, t_exec *com);
 void					ld(t_file *ssl, char *line, t_exec *com);
 t_exec					*skip_box(t_exec *com);
@@ -73,8 +77,25 @@ t_label					*cnl(char *name, int byte_c);
 void					add_label(t_label **list, t_label *new);
 t_label					*zero_label();
 void					take_arg1(char *line, t_file *ssl, t_exec *com);
+void					take_arg2(char *line, t_file *ssl, t_exec *com);
 int						is_limit(int c);
 void					skip_probel(t_file *ssl, const char *line);
 int						is_whitespace(int c);
 void					no_comment(t_file *ssl, const char *li);
+void					no_separator(t_file *ssl, char *line);
+void					aff(t_file *ssl, char *line, t_exec *com);
+void					lfork(t_file *ssl, char *line, t_exec *com);
+void					ft_fork(t_file *ssl, char *line, t_exec *com);
+void					zjmp(t_file *ssl, char *line, t_exec *com);
+void					lld(t_file *ssl, char *line, t_exec *com);
+void					st(t_file *ssl, char *line, t_exec *com);
+void					add(t_file *ssl, char *line, t_exec *com);
+void					take_arg3(char *line, t_file *ssl, t_exec *com);
+void					sub(t_file *ssl, char *line, t_exec *com);
+void					and(t_file *ssl, char *line, t_exec *com);
+void					ft_or(t_file *ssl, char *line, t_exec *com);
+void					ft_xor(t_file *ssl, char *line, t_exec *com);
+void					ldi(t_file *ssl, char *line, t_exec *com);
+void					lldi(t_file *ssl, char *line, t_exec *com);
+void					sti(t_file *ssl, char *line, t_exec *com);
 #endif
