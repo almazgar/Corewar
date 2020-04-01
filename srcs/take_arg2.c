@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   take_arg1.c                                        :+:      :+:    :+:   */
+/*   take_arg2.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lgarse <lgarse@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/29 19:06:48 by almazg            #+#    #+#             */
-/*   Updated: 2020/03/31 15:49:58 by almazg           ###   ########.fr       */
+/*   Created: 2020/04/01 10:03:44 by almazg            #+#    #+#             */
+/*   Updated: 2020/04/01 10:03:44 by almazg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/asm.h"
 
-void	take_arg1(char *line, t_file *ssl, t_exec *com)
+void	take_arg2(char *line, t_file *ssl, t_exec *com)
 {
 	int i;
 
@@ -27,20 +27,20 @@ void	take_arg1(char *line, t_file *ssl, t_exec *com)
 			i++;
 		if (0 < i && i < 3 && ft_atoi(&line[ssl->a + 1]) > 0)
 		{
-			if (!(com->a1 = ft_strsub(line, ssl->a + 1, i)))
+			if (!(com->a2 = ft_strsub(line, ssl->a + 1, i)))
 				write_error("ERROR_ARGUMENT_INIT");
 		}
 		else
 			write_error("WRONG_NUMBER_REGISTR");
-		com->ta1 = 1;
+		com->ta2 = 1;
 		ssl->a = ssl->a + i + 1;
 	}
 
-	//	прямой T_DIR
+		//	прямой T_DIR
 	else if (line[ssl->a] == '%' && line[ssl->a + 1] && line[ssl->a + 1] != ':')
 	{
 		i = 1;
-	//		2 - прямой T_DIR  с указание на число (%5 или %-5) . Начинается с % потом следует число
+		//		2 - прямой T_DIR  с указание на число (%5 или %-5) . Начинается с % потом следует число
 		// если отрицательное число
 		if (line[ssl->a + i] == '-')
 		{
@@ -49,12 +49,12 @@ void	take_arg1(char *line, t_file *ssl, t_exec *com)
 				i++;
 			if ((i > 2) && is_limit(line[ssl->a + i]))
 			{
-				if (!(com->a1 = ft_strsub(line, ssl->a + 1, i - 1)))
+				if (!(com->a2 = ft_strsub(line, ssl->a + 1, i - 1)))
 					write_error("ERROR_ARGUMENT_INIT");
 			}
 			else
 				write_error("WRONG_NUMBER_ARGUMENT");
-			com->ta1 = 2;
+			com->ta2 = 2;
 			ssl->a = ssl->a + i;
 		}
 			//	если положительное число
@@ -64,18 +64,18 @@ void	take_arg1(char *line, t_file *ssl, t_exec *com)
 				i++;
 			if ((i > 1) && is_limit(line[ssl->a + i]))
 			{
-				if (!(com->a1 = ft_strsub(line, ssl->a + 1, i - 1)))
+				if (!(com->a2 = ft_strsub(line, ssl->a + 1, i - 1)))
 					write_error("ERROR_ARGUMENT_INIT");
 			}
 			else
 				write_error("WRONG_NUMBER_ARGUMENT");
-			com->ta1 = 2;
+			com->ta2 = 2;
 			ssl->a = ssl->a + i;
 		}
 		else
 			write_error("WRONG_NUMBER_ARGUMENT");
 	}
-	//		3 - прямой T_DIR  с указание на метку (%:label). После этого следует знак разделения
+		//		3 - прямой T_DIR  с указание на метку (%:label). После этого следует знак разделения
 	else if (line[ssl->a + 1] && line[ssl->a + 1] == ':')
 	{
 		i = 2;
@@ -83,31 +83,31 @@ void	take_arg1(char *line, t_file *ssl, t_exec *com)
 			i++;
 		if ((i > 2) && is_limit(line[ssl->a + i]))
 		{
-			if (!(com->a1 = ft_strsub(line, ssl->a + 2, i - 2)))
+			if (!(com->a2 = ft_strsub(line, ssl->a + 2, i - 2)))
 				write_error("ERROR_ARGUMENT_INIT");
 		}
 		else
 			write_error("WRONG_LABEL_ARGUMENT");
-		com->ta1 = 3;
+		com->ta2 = 3;
 		ssl->a = ssl->a + i;
 	}
-	//		4 - непрямой T_IND с указанием на число (5 или -5). Начинается сразу с числа
-	//	если положительное число
+		//		4 - непрямой T_IND с указанием на число (5 или -5). Начинается сразу с числа
+		//	если положительное число
 	else if (ft_isdigit(line[ssl->a]) && ++i)
 	{
 		while (ft_isdigit(line[ssl->a + i]))
 			i++;
 		if (is_limit(line[ssl->a + i]))
 		{
-			if (!(com->a1 = ft_strsub(line, ssl->a, i)))
+			if (!(com->a2 = ft_strsub(line, ssl->a, i)))
 				write_error("ERROR_ARGUMENT_INIT");
 		}
 		else
 			write_error("WRONG_NUMBER_ARGUMENT");
-		com->ta1 = 4;
+		com->ta2 = 4;
 		ssl->a = ssl->a + i;
 	}
-	// если отрицательное число
+		// если отрицательное число
 	else if (line[ssl->a] == '-')
 	{
 		i++;
@@ -115,13 +115,13 @@ void	take_arg1(char *line, t_file *ssl, t_exec *com)
 			i++;
 		if ((i > 1) && is_limit(line[ssl->a + i]))
 		{
-			if (!(com->a1 = ft_strsub(line, ssl->a, i)))
+			if (!(com->a2 = ft_strsub(line, ssl->a, i)))
 				write_error("ERROR_ARGUMENT_INIT");
 		}
 
 		else
 			write_error("WRONG_NUMBER_ARGUMENT");
-		com->ta1 = 4;
+		com->ta2 = 4;
 		ssl->a = ssl->a + i;
 	}
 //		5 - непрямой T_IND с указанием на метку (:label). Начинается сразу с метки
@@ -132,12 +132,12 @@ void	take_arg1(char *line, t_file *ssl, t_exec *com)
 			i++;
 		if ((i > 1) && is_limit(line[ssl->a + i]))
 		{
-			if (!(com->a1 = ft_strsub(line, ssl->a + 1, i - 1)))
+			if (!(com->a2 = ft_strsub(line, ssl->a + 1, i - 1)))
 				write_error("ERROR_ARGUMENT_INIT");
 		}
 		else
 			write_error("WRONG_LABEL_NAME");
-		com->ta1 = 5;
+		com->ta2 = 5;
 		ssl->a = ssl->a + i;
 	}
 	else

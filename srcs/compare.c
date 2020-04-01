@@ -15,13 +15,14 @@
 void	compare(t_file *ssl, char *line, int j, t_exec *com)
 {
 	char		temp[0];
-	printf("%d\n", j);
-	ft_putstr(&line[ssl->a - j]);
+//	printf("%d\n", j);
+//	ft_putstr(&line[ssl->a - j]);
 	if (ft_strncmp(&line[ssl->a - j], "live", j) == 0)
 		live(ssl, line, com);
 //		*temp = 1;
 	else if (ft_strncmp(&line[ssl->a - j], "ld", j) == 0)
-		*temp = 2;
+		ld(ssl, line, com);
+//		*temp = 2;
 	else if (ft_strncmp(&line[ssl->a - j], "st", j) == 0)
 		*temp = 3;
 	else if (ft_strncmp(&line[ssl->a - j], "add", j) == 0)
