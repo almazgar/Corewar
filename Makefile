@@ -6,7 +6,7 @@
 #    By: avenonat <avenonat@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/03/03 13:49:33 by avenonat          #+#    #+#              #
-#    Updated: 2020/04/01 17:14:20 by almazg           ###   ########.fr        #
+#    Updated: 2020/04/02 10:17:45 by almazg           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ OBJ_DIR =		obj/
 SRC_DIR =		srcs/
 LIBFT =			libft/
 
-SRC =			asm.c init_struct.c including_magic.c write_error.c parsing.c\
+SRC =			asm.c init_ssl.c including_magic.c write_error.c parsing.c\
                 skip_box.c check.c strncpy_dog.c check_exec.c compare.c\
                 compare_2.c inst.c init_exec.c zero_struct.c recognize_1.c\
                 skip_probel.c is_whitespace.c no_comment.c razborka.c\
@@ -32,6 +32,7 @@ SRC =			asm.c init_struct.c including_magic.c write_error.c parsing.c\
                 inst_zjmp.c inst_lld.c inst_ld.c inst_st.c\
                 inst_add.c take_arg3.c inst_sub.c inst_and.c\
                 inst_or.c inst_xor.c inst_ldi.c inst_lldi.c inst_sti.c\
+                add_comand.c\
 
 OBJ =			$(SRC:%.c=%.o)
 
