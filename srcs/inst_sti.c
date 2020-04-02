@@ -6,7 +6,7 @@
 /*   By: lgarse <lgarse@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/01 17:43:08 by almazg            #+#    #+#             */
-/*   Updated: 2020/04/01 17:48:50 by almazg           ###   ########.fr       */
+/*   Updated: 2020/04/02 09:20:01 by almazg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,5 +57,5 @@ void	sti(t_file *ssl, char *line, t_exec *com)
 			ssl->a = ssl-> a + 1;
 	else if (line[ssl->a] != '\n' && line[ssl->a] != '\0')
 		write_error("ALLOW_ONLY_THREE_ARGUMENT_TO_STI");
-	write_error("FINISH");  // Это для проверки окончания команды
+	ft_putendl("____finish sti___");
 }

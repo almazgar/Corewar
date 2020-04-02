@@ -19,7 +19,7 @@ t_label		*cnl(char *name, int byte_c)
 	if (!(temp = (t_label *)ft_memalloc(sizeof(t_label))))
 		write_error("ERROR_LABEL_INIT");
 	temp->name = name;
-	temp->op_pos = byte_c;
+	temp->line_byte = byte_c;
 	temp->next = NULL;
 	return (temp);
 }

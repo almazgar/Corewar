@@ -1,25 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   zero_label.c                                       :+:      :+:    :+:   */
+/*   add_comand.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lgarse <lgarse@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/28 10:22:58 by almazg            #+#    #+#             */
-/*   Updated: 2020/03/28 10:22:58 by almazg           ###   ########.fr       */
+/*   Created: 2020/04/02 10:50:11 by almazg            #+#    #+#             */
+/*   Updated: 2020/04/02 12:22:49 by almazg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "asm.h"
 
-//t_label	*zero_label()
-//{
-//	t_label	*temp;
-//
-//	if (!(temp = (t_label *)ft_memalloc(sizeof(t_label))))
-//		write_error("ERROR_LABEL_INIT");
-//	temp->name = NULL;
-//	temp->line_byte = 0;
-//	temp->next = NULL;
-//	return (temp);
-//}
+#include "../includes/asm.h"
+
+void	add_comand(t_exec *list, t_exec *new)
+{
+	t_exec	*current;
+
+	if (list || new)
+	{
+		if (list)
+		{
+			current = list;
+			while (current->next)
+				current = current->next;
+			current->next = new;
+		}
+		else
+			list = new;
+	}
+}

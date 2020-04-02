@@ -32,5 +32,5 @@ void	ld(t_file *ssl, char *line, t_exec *com)
 			ssl->a = ssl-> a + 1;
 	else if (line[ssl->a] != '\n' && line[ssl->a] != '\0')
 		write_error("ALLOW_ONLY_TWO_ARGUMENT_TO_LD");
-	write_error("FINISH");  // Это для проверки окончания команды
+	ft_putendl("____finish ld___");
 }

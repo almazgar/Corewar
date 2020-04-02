@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   zero_label.c                                       :+:      :+:    :+:   */
+/*   init_ssl.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lgarse <lgarse@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/28 10:22:58 by almazg            #+#    #+#             */
-/*   Updated: 2020/03/28 10:22:58 by almazg           ###   ########.fr       */
+/*   Created: 2020/04/02 10:16:36 by almazg            #+#    #+#             */
+/*   Updated: 2020/04/02 10:16:36 by almazg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "asm.h"
+#include "../includes/asm.h"
 
-//t_label	*zero_label()
-//{
-//	t_label	*temp;
-//
-//	if (!(temp = (t_label *)ft_memalloc(sizeof(t_label))))
-//		write_error("ERROR_LABEL_INIT");
-//	temp->name = NULL;
-//	temp->line_byte = 0;
-//	temp->next = NULL;
-//	return (temp);
-//}
+t_file		*init_ssl(void)
+{
+	t_file *temp;
+
+	temp = (t_file *)malloc(sizeof(t_file));
+	*temp->name = 0;
+	*temp->comment = 0;
+	temp->a = 0;
+	*temp->zero = 0;
+	temp->fd = 0;
+	temp->line_byte = 0;
+	return (temp);
+}

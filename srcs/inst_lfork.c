@@ -6,7 +6,7 @@
 /*   By: lgarse <lgarse@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/01 13:47:31 by almazg            #+#    #+#             */
-/*   Updated: 2020/04/01 14:15:26 by almazg           ###   ########.fr       */
+/*   Updated: 2020/04/02 09:25:14 by almazg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,5 @@ void	lfork(t_file *ssl, char *line, t_exec *com)
 			ssl->a = ssl-> a + 1;
 	else if (line[ssl->a] != '\n' && line[ssl->a] != '\0')
 		write_error("ALLOW_ONLY_ONE_ARGUMENT_TO_LFORK");
-	write_error("FINISH");  // Это для проверки окончания команды
+	ft_putendl("____finish lfork___");
 }

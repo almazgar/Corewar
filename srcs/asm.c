@@ -29,7 +29,7 @@ int		main(int argc, char **argv)
 
 	i = 1;
 	j = 0;
-	ssl = init_struct();
+	ssl = init_ssl();
 	if (argc == 1 || argc > 5)
 		return (1);
 //	while (argv[i + 1])
@@ -58,6 +58,7 @@ int		main(int argc, char **argv)
 		fd = open(argv[i], O_RDONLY);
 		if ((fd = open(argv[i], O_RDONLY)) == -1)
 			write_error("DOESNT READ FILE");
+		ssl->fd = fd;
 		get_next_line(fd, &line);
 		ft_putstr(line);
 		ssl->fd = fd;

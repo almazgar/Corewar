@@ -6,7 +6,7 @@
 /*   By: avenonat <avenonat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/12 15:24:32 by avenonat          #+#    #+#             */
-/*   Updated: 2020/04/01 17:15:16 by almazg           ###   ########.fr       */
+/*   Updated: 2020/04/02 10:59:58 by almazg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void 	compare_2(t_file *ssl, char *line, int j, t_exec *com)
 {
-	char temp[0];
+//	char temp[0];
 
 	if (ft_strncmp(&line[ssl->a - j], "ldi", j) == 0)
 		ldi(ssl, line, com);
