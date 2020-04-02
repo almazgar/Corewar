@@ -6,7 +6,7 @@
 /*   By: avenonat <avenonat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/07 15:22:03 by avenonat          #+#    #+#             */
-/*   Updated: 2020/04/01 17:14:20 by almazg           ###   ########.fr       */
+/*   Updated: 2020/04/02 11:30:13 by almazg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,19 +24,21 @@ typedef struct			s_file
 	int					a;
 	char				zero[T_IND];
 	int 				fd;
+	int 				line_byte;
 }						t_file;
 
 typedef struct 			s_exec
 {
 	char 				*label;
 	int 				code_type;
-	char 				inst;
+	int 				inst;
 	char 				*reg;
 	int 				sym;
 	char 				*direct_label;
 	int 				sym1;
 	int 				number;
 	int 				direct;
+	int 				line_byte;
 	int 				n_bytes;
 	char				*a1;
 	int					ta1;
@@ -50,13 +52,13 @@ typedef struct 			s_exec
 typedef struct			s_label
 {
 	char				*name;
-	int32_t				op_pos;
+	int					line_byte;
 	struct s_label		*next;
 }						t_label;
 
 int						main(int argc, char **argv);
 void					parsing(char *line, t_file *ssl);
-t_file					*init_struct(void);
+t_file					*init_ssl(void);
 t_exec					*init_exec(void);
 void					check_name(int text, char *line, t_file *ssl);
 void					check_comment(int text, char *line, t_file *ssl);
@@ -72,7 +74,7 @@ void					write_error(char *str);
 int						decimal(const char *str);
 __int128_t				ft_atoin(const char *str, int i);
 int						is_registr(const char *a);
-void					take_label(char *line, t_file *ssl, t_label **list, t_exec *com);
+void					take_label(char *line, t_file *ssl, t_label **list, t_exec *co);
 t_label					*cnl(char *name, int byte_c);
 void					add_label(t_label **list, t_label *new);
 t_label					*zero_label();
@@ -98,4 +100,5 @@ void					ft_xor(t_file *ssl, char *line, t_exec *com);
 void					ldi(t_file *ssl, char *line, t_exec *com);
 void					lldi(t_file *ssl, char *line, t_exec *com);
 void					sti(t_file *ssl, char *line, t_exec *com);
+void					add_comand(t_exec *list, t_exec *new);
 #endif
