@@ -6,7 +6,7 @@
 /*   By: lgarse <lgarse@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/27 09:52:44 by almazg            #+#    #+#             */
-/*   Updated: 2020/04/02 12:07:32 by almazg           ###   ########.fr       */
+/*   Updated: 2020/04/03 11:31:11 by almazg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,8 @@ void	take_label(char *line, t_file *ssl, t_label **list, t_exec *co)
 		if (!(name = ft_strsub(line, ssl->a, i)))
 			write_error("ERROR_STR_OPERATOR");
 		ssl->a = ssl->a + i;
-		if (!(is_registr(name)) && 1 < i && i < 6) // это не регистр ?
-			// вызов распознавания команды (оператора) i - длина команды от 2 до 5 символов
+		if (1 < i && i < 6)
+		// вызов распознавания команды (оператора) i - длина команды от 2 до 5 символов
 		{
 			com = init_exec();
 			com->line_byte = ssl->line_byte;

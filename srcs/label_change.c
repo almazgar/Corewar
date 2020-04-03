@@ -1,38 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   connecting_people.c                                :+:      :+:    :+:   */
+/*   label_change.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lgarse <lgarse@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/24 14:38:12 by almazg            #+#    #+#             */
-/*   Updated: 2020/04/03 11:28:40 by almazg           ###   ########.fr       */
+/*   Created: 2020/04/03 11:17:29 by almazg            #+#    #+#             */
+/*   Updated: 2020/04/03 11:17:29 by almazg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/asm.h"
 
-t_exec		*connecting_people(char *line, t_file *ssl)
+void	label_change(t_label *list, t_exec **com)
 {
-	t_exec		*com;
-	t_label		*list;
+	t_exec	*current;
 
-	com = init_exec();
-	list = NULL;
-	while ((get_next_line(ssl->fd, &line)) > 0)
+	if (*com && list)
 	{
-		ssl->a = 0;
-		while (line[ssl->a])
+		current = *com;
+		while (current)
 		{
-			skip_probel(ssl, line);
-			no_comment(ssl, line);
-			if (line[ssl->a])
-				take_label(line, ssl, &list, com);
+			if (current->ta1 == 3 || current->ta1 == 5)
+				label_search1(&list, &current);
+			if (current->ta2 == 3 || current->ta2 == 5)
+				label_search2(&list, &current);
+			if (current->ta3 == 3 || current->ta3 == 5)
+				label_search3(&list, &current);
+			current = current->next;
 		}
-		ft_strdel(&line);
-		com->line_byte = com->line_byte + com->n_bytes;
 	}
-	com = com->next;
-	label_change(list, &com);
-	return (com);
 }
