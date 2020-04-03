@@ -6,7 +6,7 @@
 /*   By: avenonat <avenonat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/07 15:22:03 by avenonat          #+#    #+#             */
-/*   Updated: 2020/04/02 11:30:13 by almazg           ###   ########.fr       */
+/*   Updated: 2020/04/03 11:11:03 by almazg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,11 +58,13 @@ typedef struct			s_label
 
 int						main(int argc, char **argv);
 void					parsing(char *line, t_file *ssl);
+void					skolkovo(char *line, t_file *ssl);
 t_file					*init_ssl(void);
 t_exec					*init_exec(void);
 void					check_name(int text, char *line, t_file *ssl);
 void					check_comment(int text, char *line, t_file *ssl);
 t_exec					*check_exec(char *line, t_file *ssl);
+t_exec					*connecting_people(char *line, t_file *ssl);
 char					*strncpy_dog(char *dst, const char *src, size_t len);
 void					compare(t_file *ssl, char *line, int j, t_exec *com);
 void 					compare_2(t_file *ssl, char *line, int j, t_exec *com);
@@ -101,4 +103,8 @@ void					ldi(t_file *ssl, char *line, t_exec *com);
 void					lldi(t_file *ssl, char *line, t_exec *com);
 void					sti(t_file *ssl, char *line, t_exec *com);
 void					add_comand(t_exec *list, t_exec *new);
+void					label_change(t_label *list, t_exec **com);
+void					label_search1(t_label **list, t_exec **com);
+void					label_search2(t_label **list, t_exec **com);
+void					label_search3(t_label **list, t_exec **com);
 #endif
