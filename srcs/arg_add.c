@@ -1,37 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   add_label.c                                        :+:      :+:    :+:   */
+/*   arg_add.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lgarse <lgarse@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/27 10:36:22 by almazg            #+#    #+#             */
-/*   Updated: 2020/03/29 13:13:01 by almazg           ###   ########.fr       */
+/*   Created: 2020/04/04 11:29:56 by almazg            #+#    #+#             */
+/*   Updated: 2020/04/04 11:44:26 by almazg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/asm.h"
 
-void	add_label(t_label **list, t_label *new)
+void	arg_add(t_exec **com)
 {
-	t_label	*current;
+	t_exec	*current;
+	int i;
 
-	if (list || new)
+	if (!*com)
+		return ;
+	current = *com;
+	while (current)
 	{
-		if (*list)
-		{
-			current = *list;
-			while (current->next)
-			{
-				if (ft_strequ(current->name, new->name))
-					write_error("Double lable");
-				current = current->next;
-			}
-			if (ft_strequ(current->name, new->name))
-				write_error("Double lable");
-			current->next = new;
-		}
+		i = current->inst;
+		if ((8 < i && i < 13) || i == 14 || i == 15)
+			current->dir_size = 2;
 		else
-			*list = new;
+			current->dir_size = 4;
+		if (i != 1 && i != 9 && i != 12 && i != 15)
+		{
+			kod_type_arg(&current);
+		}
+		current = current->next;
 	}
 }

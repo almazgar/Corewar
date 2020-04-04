@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cnl.c                                              :+:      :+:    :+:   */
+/*   kod_type_arg.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: almazg <almazg@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lgarse <lgarse@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/27 10:41:52 by almazg            #+#    #+#             */
-/*   Updated: 2020/03/28 09:25:29 by almazg           ###   ########.fr       */
+/*   Created: 2020/04/04 11:46:05 by almazg            #+#    #+#             */
+/*   Updated: 2020/04/04 13:40:39 by almazg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/asm.h"
 
-t_label		*cnl(char *name, int byte_c)
+void	kod_type_arg(t_exec **com)
 {
-	t_label	*temp;
+	char *temp;
+	t_exec	*c;
 
-	if (!(temp = (t_label *)ft_memalloc(sizeof(t_label))))
-		write_error("ERROR_LABEL_INIT");
-	temp->name = name;
-	temp->line_byte = byte_c;
-	temp->next = NULL;
-	return (temp);
+	c = *com;
+	temp = ft_strnew(1);
+	c->kta = ft_strnew(1);
+	add_kta(&c, 1);
+	add_kta(&c, 2);
+	add_kta(&c, 3);
+	temp = ft_strjoin(c->kta, "00");
+	ft_strdel(&(c->kta));
+	c->kta = temp;
 }

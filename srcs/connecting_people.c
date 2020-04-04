@@ -34,5 +34,6 @@ t_exec		*connecting_people(char *line, t_file *ssl)
 	}
 	com = com->next;
 	label_change(list, &com);
+	arg_add(&com);
 	return (com);
 }

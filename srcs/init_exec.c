@@ -6,7 +6,7 @@
 /*   By: avenonat <avenonat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/12 16:44:30 by avenonat          #+#    #+#             */
-/*   Updated: 2020/04/02 10:23:27 by almazg           ###   ########.fr       */
+/*   Updated: 2020/04/04 11:27:56 by almazg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ t_exec		*init_exec()
 	temp->code_type = 0;
 	temp->inst = 0;
 	temp->reg = NULL;
-	temp->sym = 0;
+	temp->dir_size = 0;
 	temp->direct_label = NULL;
-	temp->sym1 = 0;
+	temp->kta = 0;
 	temp->number = 0;
 	temp->direct = 0;
 	temp->line_byte = 0;

@@ -1,37 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   add_label.c                                        :+:      :+:    :+:   */
+/*   add_kta.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lgarse <lgarse@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/27 10:36:22 by almazg            #+#    #+#             */
-/*   Updated: 2020/03/29 13:13:01 by almazg           ###   ########.fr       */
+/*   Created: 2020/04/04 13:23:11 by almazg            #+#    #+#             */
+/*   Updated: 2020/04/04 13:39:57 by almazg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/asm.h"
 
-void	add_label(t_label **list, t_label *new)
+void	add_kta(t_exec **com, int i)
 {
-	t_label	*current;
+	char *temp;
+	t_exec	*c;
+	int j;
 
-	if (list || new)
-	{
-		if (*list)
-		{
-			current = *list;
-			while (current->next)
-			{
-				if (ft_strequ(current->name, new->name))
-					write_error("Double lable");
-				current = current->next;
-			}
-			if (ft_strequ(current->name, new->name))
-				write_error("Double lable");
-			current->next = new;
-		}
-		else
-			*list = new;
-	}
+	c = *com;
+	temp = ft_strnew(1);
+	if (i == 1)
+		j = c->ta1;
+	else if (i == 2)
+		j = c->ta2;
+	else
+		j = c->ta3;
+	if (j == 1)
+		temp = ft_strjoin(c->kta, "01");
+	else if (j == 2)
+		temp = ft_strjoin(c->kta, "10");
+	else if (j == 4)
+		temp = ft_strjoin(c->kta, "11");
+	else
+		temp = ft_strjoin(c->kta, "00");
+	ft_strdel(&(c->kta));
+	c->kta = temp;
 }
