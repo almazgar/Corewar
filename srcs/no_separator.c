@@ -1,32 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   zero_struct.c                                      :+:      :+:    :+:   */
+/*   no_separator.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lgarse <lgarse@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/24 10:19:42 by almazg            #+#    #+#             */
-/*   Updated: 2020/03/24 10:42:53 by almazg           ###   ########.fr       */
+/*   Created: 2020/03/31 12:46:12 by almazg            #+#    #+#             */
+/*   Updated: 2020/03/31 13:17:45 by almazg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "asm.h"
+#include "../includes/asm.h"
 
-//t_parser	*zero_struct(int fd)
-//{
-//	t_parser	*su;
-//
-//	if (!(su = (t_parser *)ft_memalloc(sizeof(t_parser))))
-//		ft_putstr("ERR_PARSER_INIT");
-//	su->fd = fd;
-//	su->row = 0;
-//	su->column = 0;
-//	su->pos = 0;
-//	su->op_pos = 0;
-//	su->name = NULL;
-//	su->comment = NULL;
-//	su->code = NULL;
-//	su->code_size = 0;
-//	su->labels = NULL;
-//	return (su);
-//}
+void	no_separator(t_file *ssl, char *line)
+{
+	while (line[ssl->a] && line[ssl->a] != ',')
+	{
+		if (line[ssl->a] == '\n')
+			write_error("END_OF_LINE DURING_TAKING_ARGUMENT");
+		if (!is_whitespace(line[ssl->a]))
+			write_error("__SEPARATOR_ERROR__");
+		ssl->a = ssl->a + 1;
+	}
+	ssl->a = ssl->a + 1;
+}

@@ -12,9 +12,9 @@
 
 #include "../includes/asm.h"
 
-void	error_lex(t_parser *su)
-{
-	ft_putstr("Lexical error \n");
-	free(su);
-	exit(1);
-}
+//void	error_lex(t_parser *su)
+//{
+//	ft_putstr("Lexical error \n");
+//	free(su);
+//	exit(1);
+//}

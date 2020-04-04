@@ -12,27 +12,27 @@
 
 #include "../includes/asm.h"
 
-void	choos_dig(t_parser *su, char *line, unsigned start, t_token *list)
-{
-	unsigned column;
-
-	list->column = start;
-	if (line[su->column] == '-')
-		su->column++;
-	column = su->column;
-	while (ft_isdigit(line[su->column]))
-		su->column++;
-	if ((su->column - column)
-		&& (list->type == DIRECT || is_limit(line[su->column])))
-	{
-		list->content = data_to_list(su, line, start);
-		add_list(&su->list, list);
-	}
-	else if (list->type != DIRECT)
-	{
-		su->column = start;
-		choos_a(su, line, start, list);
-	}
-	else
-		error_lex(su);
-}
+//void	choos_dig(t_parser *su, char *line, unsigned start, t_token *list)
+//{
+//	unsigned column;
+//
+//	list->column = start;
+//	if (line[su->column] == '-')
+//		su->column++;
+//	column = su->column;
+//	while (ft_isdigit(line[su->column]))
+//		su->column++;
+//	if ((su->column - column)
+//		&& (list->type == DIRECT || is_limit(line[su->column])))
+//	{
+//		list->content = data_to_list(su, line, start);
+//		add_list(&su->list, list);
+//	}
+//	else if (list->type != DIRECT)
+//	{
+//		su->column = start;
+//		choos_a(su, line, start, list);
+//	}
+//	else
+//		error_lex(su);
+//}

@@ -12,11 +12,11 @@
 
 #include "../includes/asm.h"
 
-char	*data_to_list(t_parser *su, const char *line, unsigned start)
-{
-	char	*data;
-
-	if (!(data = ft_strsub(line, start, su->column - start)))
-		ft_putstr("ERR_STR_INIT");
-	return (data);
-}
+//char	*data_to_list(t_parser *su, const char *line, unsigned start)
+//{
+//	char	*data;
+//
+//	if (!(data = ft_strsub(line, start, su->column - start)))
+//		ft_putstr("ERR_STR_INIT");
+//	return (data);
+//}

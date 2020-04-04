@@ -14,7 +14,7 @@
 
 void	no_comment(t_file *ssl, const char *li)
 {
-	if (li[ssl->a] == COMMENT_CHAR || li[ssl->a] == ALT_COMMENT_CHAR)
+	if (li[ssl->a] == '#' || li[ssl->a] == ';')
 		while (li[ssl->a] && li[ssl->a] != '\n')
 			ssl->a++;
 }

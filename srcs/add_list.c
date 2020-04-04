@@ -12,9 +12,9 @@
 
 #include "../includes/asm.h"
 
-void	add_list(t_token **list, t_token *new)
+void	add_list(t_label **list, t_label *new)
 {
-	t_token	*current;
+	t_label	*current;
 
 	if (list)
 	{
@@ -23,17 +23,9 @@ void	add_list(t_token **list, t_token *new)
 			current = *list;
 			while (current->next)
 				current = current->next;
-			if (current->type == NEW_LINE && new->type == NEW_LINE)
-				ft_memdel((void **)&new);
-			else
-				current->next = new;
+			current->next = new;
 		}
 		else
-		{
-			if (new->type == NEW_LINE)
-				ft_memdel((void **)&new);
-			else
-				*list = new;
-		}
+			*list = new;
 	}
 }

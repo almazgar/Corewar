@@ -12,20 +12,20 @@
 
 #include "../includes/asm.h"
 
-void	move_posa(t_parser *su, const char *line)
-{
-	unsigned i;
-
-	i = ++(su->column);
-	while (line[i] && line[i] != '\"')
-	{
-		if (line[i] == '\n')
-		{
-			su->row++;
-			su->column = 0;
-		}
-		else
-			su->column++;
-		i++;
-	}
-}
+//void	move_posa(t_parser *su, const char *line)
+//{
+//	unsigned i;
+//
+//	i = ++(su->column);
+//	while (line[i] && line[i] != '\"')
+//	{
+//		if (line[i] == '\n')
+//		{
+//			su->row++;
+//			su->column = 0;
+//		}
+//		else
+//			su->column++;
+//		i++;
+//	}
+//}
