@@ -6,7 +6,7 @@
 /*   By: avenonat <avenonat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/07 15:22:03 by avenonat          #+#    #+#             */
-/*   Updated: 2020/04/03 11:11:03 by almazg           ###   ########.fr       */
+/*   Updated: 2020/04/04 12:14:03 by almazg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,9 @@ typedef struct 			s_exec
 	int 				code_type;
 	int 				inst;
 	char 				*reg;
-	int 				sym;
+	int 				dir_size;
 	char 				*direct_label;
-	int 				sym1;
+	char 				*kta;
 	int 				number;
 	int 				direct;
 	int 				line_byte;
@@ -107,4 +107,7 @@ void					label_change(t_label *list, t_exec **com);
 void					label_search1(t_label **list, t_exec **com);
 void					label_search2(t_label **list, t_exec **com);
 void					label_search3(t_label **list, t_exec **com);
+void					arg_add(t_exec **com);
+void					kod_type_arg(t_exec **com);
+void					add_kta(t_exec **com, int i);
 #endif
