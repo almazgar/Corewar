@@ -6,7 +6,7 @@
 /*   By: avenonat <avenonat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/07 15:22:03 by avenonat          #+#    #+#             */
-/*   Updated: 2020/04/04 12:14:03 by almazg           ###   ########.fr       */
+/*   Updated: 2020/04/05 08:47:19 by almazg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,4 +110,7 @@ void					label_search3(t_label **list, t_exec **com);
 void					arg_add(t_exec **com);
 void					kod_type_arg(t_exec **com);
 void					add_kta(t_exec **com, int i);
+void					free_label(t_label **list);
+void					free_exec(t_exec **com);
+void					free_t_file(t_file **ssl);
 #endif
