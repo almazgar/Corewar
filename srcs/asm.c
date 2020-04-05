@@ -6,7 +6,7 @@
 /*   By: avenonat <avenonat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/07 15:22:00 by avenonat          #+#    #+#             */
-/*   Updated: 2020/04/03 12:36:25 by almazg           ###   ########.fr       */
+/*   Updated: 2020/04/05 08:55:49 by almazg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,13 +51,12 @@ int		main(int argc, char **argv)
 			j--;
 		}
 	}
-		ssl->fd = open(argv[i], O_RDONLY);
-		if ((fd = open(argv[i], O_RDONLY)) == -1)
-			write_error("DOESNT READ FILE");
-		line = NULL;
-		skolkovo(line, ssl);
-		close(fd);
-
-
+	ssl->fd = open(argv[i], O_RDONLY);
+	if ((fd = open(argv[i], O_RDONLY)) == -1)
+		write_error("DOESNT READ FILE");
+	line = NULL;
+	skolkovo(line, ssl);
+	close(fd);
+	free_t_file(&ssl);
 	return (0);
 }

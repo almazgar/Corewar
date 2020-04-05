@@ -1,34 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   label_change.c                                     :+:      :+:    :+:   */
+/*   free_tfile.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lgarse <lgarse@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/04/03 11:17:29 by almazg            #+#    #+#             */
-/*   Updated: 2020/04/04 20:07:15 by almazg           ###   ########.fr       */
+/*   Created: 2020/04/05 08:49:46 by almazg            #+#    #+#             */
+/*   Updated: 2020/04/05 09:04:33 by almazg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/asm.h"
 
-void	label_change(t_label *list, t_exec **com)
+void	free_t_file(t_file **ssl)
 {
-	t_exec	*current;
+	t_file	*t;
 
-	if (*com && list)
-	{
-		current = *com;
-		while (current)
-		{
-			if (current->ta1 == 3 || current->ta1 == 5)
-				label_search1(&list, &current);
-			if (current->ta2 == 3 || current->ta2 == 5)
-				label_search2(&list, &current);
-			if (current->ta3 == 3 || current->ta3 == 5)
-				label_search3(&list, &current);
-			current = current->next;
-		}
-	}
-	free_label(&list);
+	t = *ssl;
+	ft_strdel(&(t->f_name));
+//	ft_strdel(&(t));
+	t = NULL;
+	ssl = NULL;
 }

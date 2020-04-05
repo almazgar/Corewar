@@ -40,4 +40,5 @@ void	skolkovo(char *line, t_file *ssl)
 	}
 	head  = connecting_people(line, ssl);
 	close(text);
+	free_exec(&head);
 }

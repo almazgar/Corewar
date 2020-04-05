@@ -1,34 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   label_change.c                                     :+:      :+:    :+:   */
+/*   free_label.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lgarse <lgarse@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/04/03 11:17:29 by almazg            #+#    #+#             */
-/*   Updated: 2020/04/04 20:07:15 by almazg           ###   ########.fr       */
+/*   Created: 2020/04/04 19:16:48 by almazg            #+#    #+#             */
+/*   Updated: 2020/04/04 20:20:20 by almazg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/asm.h"
 
-void	label_change(t_label *list, t_exec **com)
+void	free_label(t_label **list)
 {
-	t_exec	*current;
+	t_label *temp;
+	t_label	*t;
 
-	if (*com && list)
+	while(*list)
 	{
-		current = *com;
-		while (current)
-		{
-			if (current->ta1 == 3 || current->ta1 == 5)
-				label_search1(&list, &current);
-			if (current->ta2 == 3 || current->ta2 == 5)
-				label_search2(&list, &current);
-			if (current->ta3 == 3 || current->ta3 == 5)
-				label_search3(&list, &current);
-			current = current->next;
-		}
+		t = *list;
+		temp = t->next;
+		ft_strdel(&(t->name));
+		ft_memdel((void **)t);
+		*list = temp;
+		t = NULL;
 	}
-	free_label(&list);
+	list = NULL;
 }
