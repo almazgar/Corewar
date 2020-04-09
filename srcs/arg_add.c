@@ -29,7 +29,7 @@ void	arg_add(t_exec **com)
 			current->dir_size = 4;
 		if (i != 1 && i != 9 && i != 12 && i != 15)
 		{
-			kod_type_arg(&current);
+			kod_type_arg(&current); // код типа аргумента из бинарного в char
 		}
 		current = current->next;
 	}

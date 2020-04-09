@@ -6,13 +6,13 @@
 /*   By: lgarse <lgarse@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/03 12:52:44 by almazg            #+#    #+#             */
-/*   Updated: 2020/04/03 13:12:43 by almazg           ###   ########.fr       */
+/*   Updated: 2020/04/09 13:20:54 by almazg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/asm.h"
 
-void	check_comment(int text, char *line, t_file *ssl)
+void	check_comment(char *line, t_file *ssl)
 {
 	int j;
 
@@ -39,7 +39,8 @@ void	check_comment(int text, char *line, t_file *ssl)
 		if (j > COMMENT_LENGTH)
 			write_error("VERY LONG COMMENT\n");
 	}
-	strncpy_dog(ssl->comment, &line[ssl->a - j], j);
-	write(text, ssl->comment, COMMENT_LENGTH);
+	ft_strncpy(ssl->comment, &line[ssl->a - j], j);
+//	strncpy_dog(ssl->comment, &line[ssl->a - j], j);
+//	write(text, ssl->comment, COMMENT_LENGTH);
 	ft_putendl(ssl->comment);
 }

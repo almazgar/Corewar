@@ -23,6 +23,7 @@ void	ft_or(t_file *ssl, char *line, t_exec *com)
 		write_error("ERROR_TYPE_ARGUMENT_OR_COMMAND");
 	com->inst = 7;
 	com->n_bytes = 11;
+	com->dir_size = 4;
 	if (com->ta1 == 1)
 		com->n_bytes = com->n_bytes - 3;
 	if (com->ta2 == 1)

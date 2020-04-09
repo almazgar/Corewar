@@ -21,6 +21,7 @@ void	st(t_file *ssl, char *line, t_exec *com)
 	take_arg2(line, ssl, com);
 	com->inst = 3;
 	com->n_bytes = 5;
+	com->dir_size = 4;
 	if (com->ta2 == 2 || com->ta2 == 3)
 		write_error("ERROR_TYPE_ARGUMENT_ST_COMMAND");
 	if (com->ta2 == 1)

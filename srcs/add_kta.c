@@ -6,7 +6,7 @@
 /*   By: lgarse <lgarse@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/04 13:23:11 by almazg            #+#    #+#             */
-/*   Updated: 2020/04/04 13:39:57 by almazg           ###   ########.fr       */
+/*   Updated: 2020/04/08 16:07:37 by almazg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	add_kta(t_exec **com, int i)
 	int j;
 
 	c = *com;
-	temp = ft_strnew(1);
+//	temp = ft_strnew(1);
 	if (i == 1)
 		j = c->ta1;
 	else if (i == 2)

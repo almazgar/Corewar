@@ -6,7 +6,7 @@
 /*   By: avenonat <avenonat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/07 15:22:03 by avenonat          #+#    #+#             */
-/*   Updated: 2020/04/05 08:47:19 by almazg           ###   ########.fr       */
+/*   Updated: 2020/04/09 09:54:39 by almazg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ typedef struct			s_file
 	char				zero[T_IND];
 	int 				fd;
 	int 				line_byte;
+	int 				text;
 }						t_file;
 
 typedef struct 			s_exec
@@ -35,7 +36,8 @@ typedef struct 			s_exec
 	char 				*reg;
 	int 				dir_size;
 	char 				*direct_label;
-	char 				*kta;
+	char		 		*kta;
+	unsigned char		ta;
 	int 				number;
 	int 				direct;
 	int 				line_byte;
@@ -61,8 +63,8 @@ void					parsing(char *line, t_file *ssl);
 void					skolkovo(char *line, t_file *ssl);
 t_file					*init_ssl(void);
 t_exec					*init_exec(void);
-void					check_name(int text, char *line, t_file *ssl);
-void					check_comment(int text, char *line, t_file *ssl);
+void					check_name(char *line, t_file *ssl);
+void					check_comment(char *line, t_file *ssl);
 t_exec					*check_exec(char *line, t_file *ssl);
 t_exec					*connecting_people(char *line, t_file *ssl);
 char					*strncpy_dog(char *dst, const char *src, size_t len);
@@ -113,4 +115,6 @@ void					add_kta(t_exec **com, int i);
 void					free_label(t_label **list);
 void					free_exec(t_exec **com);
 void					free_t_file(t_file **ssl);
+void					line_to_write(t_exec **com, t_file *ssl);
+void					including_size(t_file *ssl);
 #endif

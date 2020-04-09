@@ -18,7 +18,8 @@ void	zjmp(t_file *ssl, char *line, t_exec *com)
 	if (com->ta1 != 2 && com->ta1 != 3)
 		write_error("ERROR_ARGUMENT_ZJMP_COMMAND");
 	com->n_bytes = 3;
-	com->inst = 9	;
+	com->inst = 9;
+	com->dir_size = 2;
 	while (line[ssl->a] && is_whitespace(line[ssl->a]))
 		ssl->a = ssl->a + 1;
 	if (line[ssl->a] == '#' || line[ssl->a] == ';')

@@ -12,7 +12,7 @@
 
 #include "../includes/asm.h"
 
-void	check_name(int text, char *line, t_file *ssl)
+void	check_name(char *line, t_file *ssl)
 {
 	int j;
 
@@ -40,6 +40,6 @@ void	check_name(int text, char *line, t_file *ssl)
 			write_error("VERY LONG NAME\n");
 	}
 	ft_strncpy(ssl->name, &line[ssl->a - j], j);
-	write(text, ssl->name, PROG_NAME_LENGTH);
+	write(ssl->text, ssl->name, PROG_NAME_LENGTH);
 	ft_putendl(ssl->name);
 }

@@ -15,7 +15,8 @@
 void	label_change(t_label *list, t_exec **com)
 {
 	t_exec	*current;
-
+// Замена меток на числа (подсчет байтов для перехода на нужную строку
+// И запись числа в а1,а2,а3 в виде char
 	if (*com && list)
 	{
 		current = *com;
@@ -30,5 +31,4 @@ void	label_change(t_label *list, t_exec **com)
 			current = current->next;
 		}
 	}
-	free_label(&list);
 }

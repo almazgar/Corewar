@@ -6,7 +6,7 @@
 /*   By: lgarse <lgarse@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/24 14:38:12 by almazg            #+#    #+#             */
-/*   Updated: 2020/04/04 19:25:00 by almazg           ###   ########.fr       */
+/*   Updated: 2020/04/09 10:19:37 by almazg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,10 @@ t_exec		*connecting_people(char *line, t_file *ssl)
 		com->line_byte = com->line_byte + com->n_bytes;
 	}
 	com = com->next;
+	including_size(ssl);
 	label_change(list, &com);
+	free_label(&list);
 	arg_add(&com);
+	line_to_write(&com, ssl);
 	return (com);
 }

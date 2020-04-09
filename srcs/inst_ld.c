@@ -21,6 +21,7 @@ void	ld(t_file *ssl, char *line, t_exec *com)
 	take_arg2(line, ssl, com);
 	com->inst = 2;
 	com->n_bytes = 7;
+	com->dir_size = 4;
 	if (com->ta2 != 1)
 		write_error("ERROR_TYPE_ARGUMENT_LD_COMMAND");
 	if (com->ta1 == 4 || com->ta1 == 5)

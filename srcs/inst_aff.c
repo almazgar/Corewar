@@ -22,6 +22,7 @@ void	aff(t_file *ssl, char *line, t_exec *com)
 		write_error("ERROR_ARGUMENT_AFF_COMMAND");
 	com->n_bytes = 3;
 	com->inst = 16;
+	com->dir_size = 4;
 	while (line[ssl->a] && is_whitespace(line[ssl->a]))
 		ssl->a = ssl->a + 1;
 	if (line[ssl->a] == '#' || line[ssl->a] == ';')

@@ -27,6 +27,7 @@ void	add(t_file *ssl, char *line, t_exec *com)
 		write_error("ERROR_TYPE_ARGUMENT_ADD_COMMAND");
 	com->inst = 4;
 	com->n_bytes = 5;
+	com->dir_size = 4;
 
 //	ft_putstr("  ARG1 is ");
 //	ft_putendl(com->a1);

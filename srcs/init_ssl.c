@@ -23,5 +23,6 @@ t_file		*init_ssl(void)
 	*temp->zero = 0;
 	temp->fd = 0;
 	temp->line_byte = 0;
+	temp->text = 0;
 	return (temp);
 }

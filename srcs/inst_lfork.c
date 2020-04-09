@@ -19,6 +19,7 @@ void	lfork(t_file *ssl, char *line, t_exec *com)
 		write_error("ERROR_ARGUMENT_LFORK_COMMAND");
 	com->n_bytes = 3;
 	com->inst = 15;
+	com->dir_size = 2;
 	while (line[ssl->a] && is_whitespace(line[ssl->a]))
 		ssl->a = ssl->a + 1;
 	if (line[ssl->a] == '#' || line[ssl->a] == ';')

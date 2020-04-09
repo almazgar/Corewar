@@ -19,7 +19,7 @@ char		*strncpy_dog(char *dst, const char *src, size_t len)
 
 	i = 0;
 	j = 0;
-	dst[i++] = '@';
+//	dst[i++] = '@';
 	while (j < len)
 	{
 		if (src[j] == '\0')

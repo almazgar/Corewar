@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   add_registr.c                                      :+:      :+:    :+:   */
+/*   including_size.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgarse <lgarse@student.42.fr>              +#+  +:+       +#+        */
+/*   By: almazg <almazg@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/29 13:51:39 by almazg            #+#    #+#             */
-/*   Updated: 2020/03/29 13:51:39 by almazg           ###   ########.fr       */
+/*   Created: 2020/04/09 09:16:12 by almazg            #+#    #+#             */
+/*   Updated: 2020/04/09 11:39:34 by almazg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/asm.h"
 
-t_label		*cnl(char *name, int byte_c)
+void	including_size(t_file *ssl)
 {
-	t_label	*temp;
+	int i;
+	unsigned char	buffer[4];
 
-	if (!(temp = (t_label *)ft_memalloc(sizeof(t_label))))
-		write_error("ERROR_LABEL_INIT");
-	temp->name = name;
-	temp->op_pos = byte_c;
-	temp->mentions = NULL;
-	temp->next = NULL;
-	return (temp);
+	i = 0;
+	while (i < 4)
+	{
+		buffer[i] = ssl->line_byte >> (8 * (3 - i));
+		i++;
+	}
+	write(ssl->text, buffer, 4);
+	write(ssl->text, ssl->comment, COMMENT_LENGTH);
+	write(ssl->text, ssl->zero, T_IND);
 }

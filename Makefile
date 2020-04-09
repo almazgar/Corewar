@@ -35,7 +35,7 @@ SRC =			asm.c init_ssl.c including_magic.c write_error.c parsing.c\
                 add_comand.c label_change.c label_search1.c label_search2.c\
                 label_search3.c skolkovo.c check_name.c check_comment.c\
                 arg_add.c kod_type_arg.c add_kta.c free_label.c free_exec.c\
-                free_tfile.c\
+                free_tfile.c line_to_write.c including_size.c\
 
 OBJ =			$(SRC:%.c=%.o)
 

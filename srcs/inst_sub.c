@@ -27,6 +27,7 @@ void	sub(t_file *ssl, char *line, t_exec *com)
 		write_error("ERROR_TYPE_ARGUMENT_SUB_COMMAND");
 	com->inst = 5;
 	com->n_bytes = 5;
+	com->dir_size = 4;
 //
 //	ft_putstr("  ARG1 is ");
 //	ft_putendl(com->a1);

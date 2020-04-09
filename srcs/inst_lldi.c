@@ -25,6 +25,7 @@ void	lldi(t_file *ssl, char *line, t_exec *com)
 		write_error("ERROR_TYPE_ARGUMENT_LLDI_COMMAND");
 	com->inst = 14;
 	com->n_bytes = 7;
+	com->dir_size = 2;
 	if (com->ta1 == 1)
 		com->n_bytes = com->n_bytes - 1;
 	if (com->ta2 == 1)

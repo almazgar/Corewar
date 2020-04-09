@@ -23,7 +23,8 @@ t_exec		*init_exec()
 	temp->reg = NULL;
 	temp->dir_size = 0;
 	temp->direct_label = NULL;
-	temp->kta = 0;
+	temp->kta = NULL;
+	temp->ta = 0;
 	temp->number = 0;
 	temp->direct = 0;
 	temp->line_byte = 0;

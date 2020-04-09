@@ -21,7 +21,7 @@ void	free_exec(t_exec **com)
 	{
 		t = *com;
 		temp = t->next;
-		ft_strdel(&(t->kta));
+//		ft_strdel(&(t->kta));
 		ft_strdel(&(t->a1));
 		ft_strdel(&(t->a2));
 		ft_strdel(&(t->a3));

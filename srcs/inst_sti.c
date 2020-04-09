@@ -6,7 +6,7 @@
 /*   By: lgarse <lgarse@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/01 17:43:08 by almazg            #+#    #+#             */
-/*   Updated: 2020/04/02 09:20:01 by almazg           ###   ########.fr       */
+/*   Updated: 2020/04/08 16:53:45 by almazg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void	sti(t_file *ssl, char *line, t_exec *com)
 		write_error("ERROR_TYPE_ARGUMENT_STI_COMMAND");
 	com->inst = 11;
 	com->n_bytes = 7;
+	com->dir_size = 2;
 	if (com->ta2 == 1)
 		com->n_bytes = com->n_bytes - 1;
 	if (com->ta3 == 1)

@@ -6,7 +6,7 @@
 /*   By: lgarse <lgarse@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/01 14:34:54 by almazg            #+#    #+#             */
-/*   Updated: 2020/04/01 14:34:54 by almazg           ###   ########.fr       */
+/*   Updated: 2020/04/08 16:56:18 by almazg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void	live(t_file *ssl, char *line, t_exec *com)
 		write_error("ERROR_ARGUMENT_LIVE_COMMAND");
 	com->n_bytes = 5;
 	com->inst = 1;
+	com->dir_size = 4;
 	while (line[ssl->a] && is_whitespace(line[ssl->a]))
 		ssl->a = ssl->a + 1;
 	if (line[ssl->a] == '#' || line[ssl->a] == ';')
