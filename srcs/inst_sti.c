@@ -37,5 +37,5 @@ void	sti(t_file *ssl, char *line, t_exec *com)
 			ssl->a = ssl-> a + 1;
 	else if (line[ssl->a] != '\n' && line[ssl->a] != '\0')
 		write_error("ALLOW_ONLY_THREE_ARGUMENT_TO_STI");
-	ft_putendl("____finish sti___");
+//	ft_putendl("____finish sti___");
 }
