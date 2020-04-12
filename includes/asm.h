@@ -111,4 +111,5 @@ void					free_exec(t_exec *com);
 void					free_t_file(t_file *ssl);
 void					line_to_write(t_exec **com, t_file *ssl);
 void					including_size(t_file *ssl);
+long long				negativ(long long nb, int b);
 #endif
