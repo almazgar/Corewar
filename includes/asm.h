@@ -30,16 +30,10 @@ typedef struct			s_file
 
 typedef struct 			s_exec
 {
-	char 				*label;
-	int 				code_type;
 	int 				inst;
-	char 				*reg;
 	int 				dir_size;
-	char 				*direct_label;
 	char		 		*kta;
 	unsigned char		ta;
-	int 				number;
-	int 				direct;
 	int 				line_byte;
 	int 				n_bytes;
 	char				*a1;
@@ -112,9 +106,9 @@ void					label_search3(t_label **list, t_exec **com);
 void					arg_add(t_exec **com);
 void					kod_type_arg(t_exec **com);
 void					add_kta(t_exec **com, int i);
-void					free_label(t_label **list);
-void					free_exec(t_exec **com);
-void					free_t_file(t_file **ssl);
+void					free_label(t_label *list);
+void					free_exec(t_exec *com);
+void					free_t_file(t_file *ssl);
 void					line_to_write(t_exec **com, t_file *ssl);
 void					including_size(t_file *ssl);
 #endif
