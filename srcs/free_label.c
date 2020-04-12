@@ -12,19 +12,15 @@
 
 #include "../includes/asm.h"
 
-void	free_label(t_label **list)
+void	free_label(t_label *list)
 {
-	t_label *temp;
 	t_label	*t;
 
-	while(*list)
+	while(list)
 	{
-		t = *list;
-		temp = t->next;
-		ft_strdel(&(t->name));
-		ft_memdel((void **)t);
-		*list = temp;
-		t = NULL;
+		t =list;
+		list = list->next;
+        ft_memdel((void**)&(t->name));
+        ft_memdel((void**)&t);
 	}
-	list = NULL;
 }

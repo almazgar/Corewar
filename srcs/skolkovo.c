@@ -24,9 +24,13 @@ void	skolkovo(char *line, t_file *ssl)
 	{
 		ssl->a = 0;
 		if (line[ssl->a] == '#' || line[ssl->a] == ';')
-			continue;
+        {
+            ft_strdel(&line);
+            continue;
+        }
 		check_name(line, ssl);
 		write(ssl->text, ssl->zero, T_IND);
+        ft_strdel(&line);
 //		write(text, ssl->zero, T_IND); //	next including_size
 		break;
 	}
@@ -34,12 +38,16 @@ void	skolkovo(char *line, t_file *ssl)
 	{
 		ssl->a = 0;
 		if (line[ssl->a] == '#' || line[ssl->a] == ';')
-			continue;
+        {
+            ft_strdel(&line);
+            continue;
+        }
 		check_comment(line, ssl);
+        ft_strdel(&line);
 //		write(text, ssl->zero, T_IND);
 		break;
 	}
 	head  = connecting_people(line, ssl);
 	close(text);
-	free_exec(&head);
+	free_exec(head);
 }

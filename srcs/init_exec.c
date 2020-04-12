@@ -17,16 +17,10 @@ t_exec		*init_exec()
 	t_exec *temp;
 
 	temp = (t_exec *)malloc(sizeof(t_exec));
-	temp->label = NULL;
-	temp->code_type = 0;
 	temp->inst = 0;
-	temp->reg = NULL;
 	temp->dir_size = 0;
-	temp->direct_label = NULL;
 	temp->kta = NULL;
 	temp->ta = 0;
-	temp->number = 0;
-	temp->direct = 0;
 	temp->line_byte = 0;
 	temp->n_bytes = 0;
 	temp->a1 = NULL;
@@ -36,6 +30,5 @@ t_exec		*init_exec()
 	temp->a3 = NULL;
 	temp->ta3 = 0;
 	temp->next = NULL;
-
 	return (temp);
 }

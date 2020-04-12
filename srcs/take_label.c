@@ -47,8 +47,6 @@ void	take_label(char *line, t_file *ssl, t_label **list, t_exec *co)
 	}
 	else if ((i) && is_limit(line[ssl->a + i]))  // Это команда + надо записать в структуру
 	{
-		if (!(name = ft_strsub(line, ssl->a, i)))
-			write_error("ERROR_STR_OPERATOR");
 		ssl->a = ssl->a + i;
 		if (1 < i && i < 6)
 		// вызов распознавания команды (оператора) i - длина команды от 2 до 5 символов

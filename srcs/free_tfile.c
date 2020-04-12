@@ -12,13 +12,8 @@
 
 #include "../includes/asm.h"
 
-void	free_t_file(t_file **ssl)
+void	free_t_file(t_file *ssl)
 {
-	t_file	*t;
-
-	t = *ssl;
-	ft_strdel(&(t->f_name));
-//	ft_strdel(&(t));
-	t = NULL;
-	ssl = NULL;
+	ft_memdel((void **)&ssl->f_name);
+	ft_memdel((void **)&ssl);
 }

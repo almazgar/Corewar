@@ -29,6 +29,7 @@ void		label_search3(t_label **list, t_exec **com)
 					temp->ta3 = 2;
 				else
 					temp->ta3 = 4;
+				ft_memdel((void**)&temp->a3);
 				temp->a3 = ft_itoa(current->line_byte - temp->line_byte);
 				return ;
 			}

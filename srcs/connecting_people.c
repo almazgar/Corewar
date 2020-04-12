@@ -15,6 +15,7 @@
 t_exec		*connecting_people(char *line, t_file *ssl)
 {
 	t_exec		*com;
+	t_exec		*t;
 	t_label		*list;
 
 	com = init_exec();
@@ -32,10 +33,12 @@ t_exec		*connecting_people(char *line, t_file *ssl)
 		ft_strdel(&line);
 		com->line_byte = com->line_byte + com->n_bytes;
 	}
+	t = com;
 	com = com->next;
+	ft_memdel((void**)&t);
 	including_size(ssl);
 	label_change(list, &com);
-	free_label(&list);
+	free_label(list);
 	arg_add(&com);
 	line_to_write(&com, ssl);
 	return (com);

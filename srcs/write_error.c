@@ -14,6 +14,7 @@
 
 void	write_error(char *str)
 {
-	ft_printf("%s", str);
+	ft_putstr(str);
+
 	exit(1);
 }

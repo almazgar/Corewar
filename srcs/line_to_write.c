@@ -95,5 +95,6 @@ void	line_to_write(t_exec **com,t_file *ssl)
 //		write(text, s, current->n_bytes);
 		current = current->next;
 //		free(s);
+        ft_memdel((void**)&s);
 	}
 }

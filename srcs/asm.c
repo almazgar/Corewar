@@ -57,6 +57,7 @@ int		main(int argc, char **argv)
 	line = NULL;
 	skolkovo(line, ssl);
 	close(fd);
-	free_t_file(&ssl);
+	free_t_file(ssl);
+    ft_strdel(&line);
 	return (0);
 }

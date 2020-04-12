@@ -20,7 +20,8 @@ void	kod_type_arg(t_exec **com)
 	int s;
 
 	c = *com;
-	temp = ft_strnew(1);
+	temp = NULL;
+//	temp = ft_strnew(1);
 	c->kta = ft_strnew(1);
 	add_kta(&c, 1);
 	add_kta(&c, 2);

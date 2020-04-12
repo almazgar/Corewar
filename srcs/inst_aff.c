@@ -14,9 +14,6 @@
 
 void	aff(t_file *ssl, char *line, t_exec *com)
 {
-	int j;
-
-	j = 0;
 	take_arg1(line, ssl, com);
 	if (com->ta1 != 1)
 		write_error("ERROR_ARGUMENT_AFF_COMMAND");
