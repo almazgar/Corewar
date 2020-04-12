@@ -6,7 +6,7 @@
 /*   By: lgarse <lgarse@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/03 12:52:44 by almazg            #+#    #+#             */
-/*   Updated: 2020/04/09 13:20:54 by almazg           ###   ########.fr       */
+/*   Updated: 2020/04/12 12:51:33 by almazg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ void	check_comment(char *line, t_file *ssl)
 	while (line[ssl->a] != '.')
 		(ssl->a)++;
 	ft_strncpy(ssl->comment, &line[ssl->a], 8);
-	ft_putstr(ssl->comment);
-	ft_putstr("___");
+//	ft_putstr(ssl->comment);
+//	ft_putstr("___");
 	if (line[ssl->a] == '.' && ft_strcmp(ssl->comment, ".comment") == 0)
 	{
 		ssl->a += 6;
@@ -39,8 +39,9 @@ void	check_comment(char *line, t_file *ssl)
 		if (j > COMMENT_LENGTH)
 			write_error("VERY LONG COMMENT\n");
 	}
+	ft_bzero(ssl->comment, COMMENT_LENGTH);
 	ft_strncpy(ssl->comment, &line[ssl->a - j], j);
 //	strncpy_dog(ssl->comment, &line[ssl->a - j], j);
 //	write(text, ssl->comment, COMMENT_LENGTH);
-	ft_putendl(ssl->comment);
+//	ft_putendl(ssl->comment);
 }

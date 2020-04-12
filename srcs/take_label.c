@@ -6,7 +6,7 @@
 /*   By: lgarse <lgarse@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/27 09:52:44 by almazg            #+#    #+#             */
-/*   Updated: 2020/04/03 11:31:11 by almazg           ###   ########.fr       */
+/*   Updated: 2020/04/12 12:51:33 by almazg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,9 @@ void	take_label(char *line, t_file *ssl, t_label **list, t_exec *co)
 			write_error("ERROR_STR_LABEL");
 		add_label(list, cnl(name, ssl->line_byte));
 		ssl->a = ssl->a + i + 1;
-		ft_putstr("label_name is ");
-		ft_putendl(name);
-		ft_putnbr(ssl->line_byte);
+//		ft_putstr("label_name is ");
+//		ft_putendl(name);
+//		ft_putnbr(ssl->line_byte);
 		write(1, "\n",1);
 	}
 	else if ((i) && is_limit(line[ssl->a + i]))  // Это команда + надо записать в структуру
@@ -60,6 +60,6 @@ void	take_label(char *line, t_file *ssl, t_label **list, t_exec *co)
 			write_error("WRONG_OPERATOR");
 		add_comand(co, com);
 	}
-//	else   // это ошибка поскольку не метка и не команда
-//		write_error("WRONG_STRING");
+	else   // это ошибка поскольку не метка и не команда
+		write_error("WRONG_LABEL_STRING");
 }
