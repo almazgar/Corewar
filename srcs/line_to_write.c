@@ -6,7 +6,7 @@
 /*   By: lgarse <lgarse@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/08 16:13:47 by almazg            #+#    #+#             */
-/*   Updated: 2020/04/09 10:34:19 by almazg           ###   ########.fr       */
+/*   Updated: 2020/04/12 13:58:55 by almazg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,9 @@ void	line_to_write(t_exec **com,t_file *ssl)
 	t_exec	*current;
 	unsigned char	*s;
 	int i;
-	int j;
+	long long j;
 	int k;
-//	signed int m;
 
-//	k = 3;
 	if (!*com)
 		return ;
 	current = *com;
@@ -38,13 +36,21 @@ void	line_to_write(t_exec **com,t_file *ssl)
 			s[1] = current->ta;
 		}
 		j = ft_atoi(current->a1);
+//		if (j < 0)
+//			j = negativ(-j, 4);
 		if (current->ta1 == 1)
 			s[i++] = j;
 		else if (current->ta1 == 2 && current->dir_size == 4)
+		{
+			if (j < 0)
+				j = negativ(-j, 4);
 			while(k > -1)
 				s[i++] = j >> (8 * k--);
+		}
 		else
 		{
+			if (j < 0)
+				j = negativ(-j, 2);
 			k = 1;
 			while(k > -1)
 				s[i++] = j >> (8 * k--);
@@ -56,10 +62,17 @@ void	line_to_write(t_exec **com,t_file *ssl)
 			if (current->ta2 == 1)
 				s[i++] = j;
 			else if (current->ta2 == 2 && current->dir_size == 4)
+			{
+				if (j < 0)
+					j = negativ(-j, 4);
 				while(k > -1)
 					s[i++] = j >> (8 * k--);
+			}
+
 			else
 			{
+				if (j < 0)
+					j = negativ(-j, 4);
 				k = 1;
 				while(k > -1)
 					s[i++] = j >> (8 * k--);
@@ -72,10 +85,17 @@ void	line_to_write(t_exec **com,t_file *ssl)
 			if (current->ta3 == 1)
 				s[i++] = j;
 			else if (current->ta3 == 2 && current->dir_size == 4)
+			{
+				if (j < 0)
+					j = negativ(-j, 4);
 				while(k > -1)
 					s[i++] = j >> (8 * k--);
+			}
+
 			else
 			{
+				if (j < 0)
+					j = negativ(-j, 4);
 				k = 1;
 				while(k > -1)
 					s[i++] = j >> (8 * k--);
