@@ -68,7 +68,6 @@ void	line_to_write(t_exec **com,t_file *ssl)
 				while(k > -1)
 					s[i++] = j >> (8 * k--);
 			}
-
 			else
 			{
 				if (j < 0)
@@ -91,7 +90,6 @@ void	line_to_write(t_exec **com,t_file *ssl)
 				while(k > -1)
 					s[i++] = j >> (8 * k--);
 			}
-
 			else
 			{
 				if (j < 0)
@@ -105,16 +103,7 @@ void	line_to_write(t_exec **com,t_file *ssl)
 			write(ssl->text, s, i);
 		else
 			write_error("ERROR_CONVERTING_ARGUMENTS");
-//		if (j < 0)
-//		{
-//			m =  j;
-//			j = ~j;
-//			m = ~m;
-//			m = m | 1;
-//		}
-//		write(text, s, current->n_bytes);
 		current = current->next;
-//		free(s);
         ft_memdel((void**)&s);
 	}
 }

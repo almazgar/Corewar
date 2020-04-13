@@ -19,7 +19,6 @@ void	add_kta(t_exec **com, int i)
 	int j;
 
 	c = *com;
-//	temp = ft_strnew(1);
 	if (i == 1)
 		j = c->ta1;
 	else if (i == 2)

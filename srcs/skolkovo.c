@@ -23,30 +23,40 @@ void	skolkovo(char *line, t_file *ssl)
 	while ((get_next_line(ssl->fd, &line)) > 0)
 	{
 		ssl->a = 0;
-		if (line[ssl->a] == '#' || line[ssl->a] == ';')
+        while (line[ssl->a] && is_whitespace(line[ssl->a]))
+            (ssl->a)++;
+		if (line[ssl->a] && (line[ssl->a] == '#' || line[ssl->a] == ';'))
         {
             ft_strdel(&line);
             continue;
         }
-		check_name(line, ssl);
-		write(ssl->text, ssl->zero, T_IND);
-        ft_strdel(&line);
-//		write(text, ssl->zero, T_IND); //	next including_size
-		break;
+		else if (line[ssl->a] && line[ssl->a] == '.')
+        {
+            check_name(line, ssl);
+            write(ssl->text, ssl->zero, T_IND);
+            ft_strdel(&line);
+            break;
+        }
 	}
 	while ((get_next_line(ssl->fd, &line)) > 0)
 	{
 		ssl->a = 0;
-		if (line[ssl->a] == '#' || line[ssl->a] == ';')
+        while (line[ssl->a] && is_whitespace(line[ssl->a]))
+            (ssl->a)++;
+        if (line[ssl->a] && (line[ssl->a] == '#' || line[ssl->a] == ';'))
         {
             ft_strdel(&line);
             continue;
         }
-		check_comment(line, ssl);
-        ft_strdel(&line);
-//		write(text, ssl->zero, T_IND);
-		break;
+        else if (line[ssl->a] && line[ssl->a] == '.')
+        {
+            check_comment(line, ssl);
+            ft_strdel(&line);
+            break;
+        }
 	}
+	if (ft_strlen(ssl->comment) == 0)
+        write_error("DOESN'T HAVE COMMENT2\n");
 	head  = connecting_people(line, ssl);
 	close(text);
 	free_exec(head);

@@ -18,11 +18,9 @@ void	check_name(char *line, t_file *ssl)
 
 	j = 0;
 	ft_bzero(ssl->name, PROG_NAME_LENGTH);
-	while (line[ssl->a] && line[ssl->a] != '.')
-		(ssl->a)++;
+//	while (line[ssl->a] && line[ssl->a] != '.')
+//		(ssl->a)++;
 	ft_strncpy(ssl->name, &line[ssl->a], 5);
-//	ft_putstr(ssl->name);
-//	ft_putstr("___");
 	if (line[ssl->a] == '.' && ft_strcmp(ssl->name, ".name") == 0)
 	{
 		ssl->a += 4;
@@ -42,5 +40,4 @@ void	check_name(char *line, t_file *ssl)
 	ft_bzero(ssl->name, PROG_NAME_LENGTH);
 	ft_strncpy(ssl->name, &line[ssl->a - j], j);
 	write(ssl->text, ssl->name, PROG_NAME_LENGTH);
-//	ft_putendl(ssl->name);
 }
