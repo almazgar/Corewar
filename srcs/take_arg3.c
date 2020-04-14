@@ -6,7 +6,7 @@
 /*   By: lgarse <lgarse@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/01 16:06:02 by almazg            #+#    #+#             */
-/*   Updated: 2020/04/01 16:06:02 by almazg           ###   ########.fr       */
+/*   Updated: 2020/04/14 17:17:56 by almazg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ void	take_arg3(char *line, t_file *ssl, t_exec *com)
 	{
 		while (ft_isdigit(line[ssl->a + i + 1]))
 			i++;
-		if (0 < i && i < 3 && ft_atoi(&line[ssl->a + 1]) > 0)
+//		if (0 < i && i < 3 && ft_atoi(&line[ssl->a + 1]) > 0)
+		if (0 < i && i < 3)
 		{
 			if (!(com->a3 = ft_strsub(line, ssl->a + 1, i)))
 				write_error("ERROR_ARGUMENT_INIT");
