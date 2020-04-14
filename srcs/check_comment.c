@@ -6,7 +6,7 @@
 /*   By: lgarse <lgarse@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/03 12:52:44 by almazg            #+#    #+#             */
-/*   Updated: 2020/04/14 14:40:35 by almazg           ###   ########.fr       */
+/*   Updated: 2020/04/14 14:42:44 by almazg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,7 @@ void	check_comment(char *line, t_file *ssl)
 //	ft_strncpy(ssl->comment, &line[ssl->a - j], j);
 //	write(ssl->text, ssl->comment, COMMENT_LENGTH);
 	ssl->c = 1;
+	ft_memdel((void **)&s);
 }
 
 

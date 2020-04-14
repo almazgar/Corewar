@@ -6,7 +6,7 @@
 /*   By: lgarse <lgarse@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/03 12:44:35 by almazg            #+#    #+#             */
-/*   Updated: 2020/04/14 14:30:26 by almazg           ###   ########.fr       */
+/*   Updated: 2020/04/14 14:50:36 by almazg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,7 @@ void	check_name(char *line, t_file *ssl)
 	write(ssl->text, ssl->name, PROG_NAME_LENGTH);
 	write(ssl->text, ssl->zero, T_IND);
 	ssl->n = 1;
+	ft_memdel((void **)&s);
 //
 //			while (line[ssl->a] && is_whitespace(line[ssl->a]))
 //				(ssl->a)++;
