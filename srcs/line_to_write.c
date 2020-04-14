@@ -42,15 +42,15 @@ void	line_to_write(t_exec **com,t_file *ssl)
 			s[i++] = j;
 		else if (current->ta1 == 2 && current->dir_size == 4)
 		{
-			if (j < 0)
-				j = negativ(-j, 4);
+//			if (j < 0)
+//				j = negativ(-j, 4);
 			while(k > -1)
 				s[i++] = j >> (8 * k--);
 		}
 		else
 		{
-			if (j < 0)
-				j = negativ(-j, 2);
+//			if (j < 0)
+//				j = negativ(-j, 2);
 			k = 1;
 			while(k > -1)
 				s[i++] = j >> (8 * k--);
@@ -63,15 +63,15 @@ void	line_to_write(t_exec **com,t_file *ssl)
 				s[i++] = j;
 			else if (current->ta2 == 2 && current->dir_size == 4)
 			{
-				if (j < 0)
-					j = negativ(-j, 4);
+//				if (j < 0)
+//					j = negativ(-j, 4);
 				while(k > -1)
 					s[i++] = j >> (8 * k--);
 			}
 			else
 			{
-				if (j < 0)
-					j = negativ(-j, 4);
+//				if (j < 0)
+//					j = negativ(-j, 4);
 				k = 1;
 				while(k > -1)
 					s[i++] = j >> (8 * k--);
@@ -85,15 +85,15 @@ void	line_to_write(t_exec **com,t_file *ssl)
 				s[i++] = j;
 			else if (current->ta3 == 2 && current->dir_size == 4)
 			{
-				if (j < 0)
-					j = negativ(-j, 4);
+//				if (j < 0)
+//					j = negativ(-j, 4);
 				while(k > -1)
 					s[i++] = j >> (8 * k--);
 			}
 			else
 			{
-				if (j < 0)
-					j = negativ(-j, 4);
+//				if (j < 0)
+//					j = negativ(-j, 4);
 				k = 1;
 				while(k > -1)
 					s[i++] = j >> (8 * k--);

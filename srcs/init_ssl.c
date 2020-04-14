@@ -27,5 +27,7 @@ t_file		*init_ssl(void)
 	temp->fd = 0;
 	temp->line_byte = 0;
 	temp->text = 0;
+	temp->n = 0;
+	temp->c = 0;
 	return (temp);
 }
