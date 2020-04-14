@@ -50,4 +50,6 @@ void	name_comment(char *line, t_file *ssl)
 		}
 		ft_strdel(&line);
 	}
+	ft_memdel((void**)&c);
+	ft_memdel((void**)&n);
 }
