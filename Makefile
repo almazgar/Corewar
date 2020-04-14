@@ -6,7 +6,7 @@
 #    By: avenonat <avenonat@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/03/03 13:49:33 by avenonat          #+#    #+#              #
-#    Updated: 2020/04/05 08:47:19 by almazg           ###   ########.fr        #
+#    Updated: 2020/04/13 16:44:32 by almazg           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,8 +19,8 @@ OBJ_DIR =		obj/
 SRC_DIR =		srcs/
 LIBFT =			libft/
 
-SRC =			asm.c init_ssl.c including_magic.c write_error.c parsing.c\
-                skip_box.c check.c strncpy_dog.c check_exec.c compare.c\
+SRC =			asm.c init_ssl.c including_magic.c write_error.c \
+                skip_box.c strncpy_dog.c check_exec.c compare.c\
                 compare_2.c inst.c init_exec.c zero_struct.c recognize_1.c\
                 skip_probel.c is_whitespace.c no_comment.c razborka.c\
                 cne.c add_list.c choos_a.c data_to_list.c is_limit.c\
@@ -36,6 +36,7 @@ SRC =			asm.c init_ssl.c including_magic.c write_error.c parsing.c\
                 label_search3.c skolkovo.c check_name.c check_comment.c\
                 arg_add.c kod_type_arg.c add_kta.c free_label.c free_exec.c\
                 free_tfile.c line_to_write.c including_size.c negativ.c\
+                name_comment.c\
 
 OBJ =			$(SRC:%.c=%.o)
 
