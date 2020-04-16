@@ -6,7 +6,7 @@
 /*   By: lgarse <lgarse@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/03 12:44:35 by almazg            #+#    #+#             */
-/*   Updated: 2020/04/14 14:50:36 by almazg           ###   ########.fr       */
+/*   Updated: 2020/04/15 12:50:53 by almazg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	check_name(char *line, t_file *ssl)
 			while (line[ssl->a] && is_whitespace(line[ssl->a]))
 				(ssl->a)++;
 			if (line[ssl->a] && line[ssl->a] != '"')
-				write_error("ERROR NAME\n");
+				write_error("ERROR NAME");
 		}
 		ft_strdel(&line);
 	}
@@ -68,45 +68,12 @@ void	check_name(char *line, t_file *ssl)
 		}
 	}
 	if (line[ssl->a] != '"')
-		write_error("ERROR NO FINISH NAME\n");
+		write_error("ERROR NO FINISH NAME");
 	if (j > PROG_NAME_LENGTH)
-		write_error("VERY LONG NAME\n");
+		write_error("VERY LONG NAME");
 	ft_bzero(ssl->name, PROG_NAME_LENGTH);
 	ft_strncpy(ssl->name, s, j);
-//	ft_strncpy(ssl->name, &line[ssl->a - j], j);
-	write(ssl->text, ssl->name, PROG_NAME_LENGTH);
-	write(ssl->text, ssl->zero, T_IND);
 	ssl->n = 1;
 	ft_memdel((void **)&s);
-//
-//			while (line[ssl->a] && is_whitespace(line[ssl->a]))
-//				(ssl->a)++;
-//			if (line[ssl->a] && (line[ssl->a] == '#' || line[ssl->a] == ';'))
-//			{
-//				ft_strdel(&line);
-//				continue;
-//			}
-//			else if (line[ssl->a] && line[ssl->a] == '.')
-//			{
-//				check_name(line, ssl);
-//				write(ssl->text, ssl->zero, T_IND);
-//				ft_strdel(&line);
-//				break;
-//			}
-//		}
-//	}
-//	}
-//	else
-//		write_error("CHAMPION DOESN'T HAVE NAME\n");
-//	(ssl->a)++;
-//	while (line[ssl->a] && line[ssl->a] != '"')
-//	{
-//		(ssl->a)++;
-//		j++;
-//		if (j > PROG_NAME_LENGTH)
-//			write_error("VERY LONG NAME\n");
-//	}
-//	ft_bzero(ssl->name, PROG_NAME_LENGTH);
-//	ft_strncpy(ssl->name, &line[ssl->a - j], j);
-//	write(ssl->text, ssl->name, PROG_NAME_LENGTH);
+
 }

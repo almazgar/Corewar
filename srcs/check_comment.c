@@ -6,7 +6,7 @@
 /*   By: lgarse <lgarse@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/03 12:52:44 by almazg            #+#    #+#             */
-/*   Updated: 2020/04/14 14:42:44 by almazg           ###   ########.fr       */
+/*   Updated: 2020/04/14 17:17:56 by almazg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	check_comment(char *line, t_file *ssl)
 			while (line[ssl->a] && is_whitespace(line[ssl->a]))
 				(ssl->a)++;
 			if (line[ssl->a] && line[ssl->a] != '"')
-				write_error("ERROR COMMENT\n");
+				write_error("ERROR COMMENT");
 			ft_strdel(&line);
 		}
 	}
@@ -60,9 +60,9 @@ void	check_comment(char *line, t_file *ssl)
 		}
 	}
 	if (line[ssl->a] != '"')
-		write_error("ERROR NO FINISH COMMENT\n");
+		write_error("ERROR NO FINISH COMMENT");
 	if (j > COMMENT_LENGTH)
-		write_error("VERY LONG COMMENT\n");
+		write_error("VERY LONG COMMENT");
 	ft_bzero(ssl->comment, COMMENT_LENGTH);
 	ft_strncpy(ssl->comment, s, j);
 //	ft_strncpy(ssl->comment, &line[ssl->a - j], j);

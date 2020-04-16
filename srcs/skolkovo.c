@@ -6,20 +6,20 @@
 /*   By: almazg <almazg@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/03 11:09:33 by almazg            #+#    #+#             */
-/*   Updated: 2020/04/14 10:47:50 by almazg           ###   ########.fr       */
+/*   Updated: 2020/04/15 12:45:26 by almazg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../includes/asm.h"
 
 void	skolkovo(char *line, t_file *ssl)
 {
-	int		text;
+//	int		text;
 	t_exec	*head;
 
-	if ((text = open(ssl->f_name, O_CREAT | O_TRUNC | O_WRONLY, 0644)) == -1)
-		write_error("FILE DOESN'T CREAT");
-	ssl->text = text;
-	including_magic(text);
+//	if ((text = open(ssl->f_name, O_CREAT | O_TRUNC | O_WRONLY, 0644)) == -1)
+//		write_error("FILE DOESN'T CREAT");
+//	ssl->text = text;
+//	including_magic(text);
 	name_comment(line, ssl);
 
 //	while ((get_next_line(ssl->fd, &line)) > 0)
@@ -61,6 +61,6 @@ void	skolkovo(char *line, t_file *ssl)
 //        write_error("DOESN'T HAVE COMMENT2\n");
 	head  = connecting_people(line, ssl);
 //	write(ssl->text, "\n", 1);
-	close(text);
+	close(ssl->text);
 	free_exec(head);
 }

@@ -6,7 +6,7 @@
 /*   By: lgarse <lgarse@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/24 14:38:12 by almazg            #+#    #+#             */
-/*   Updated: 2020/04/09 10:19:37 by almazg           ###   ########.fr       */
+/*   Updated: 2020/04/16 08:55:51 by almazg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,17 @@ t_exec		*connecting_people(char *line, t_file *ssl)
 	t = com;
 	com = com->next;
 	ft_memdel((void**)&t);
-	including_size(ssl);
+
 	label_change(list, &com);
 	free_label(list);
 	arg_add(&com);
+
+	if ((ssl->text = open(ssl->f_name, O_CREAT | O_TRUNC | O_WRONLY, 0644)) == -1)
+		write_error("FILE DOESN'T CREAT");
+
+	including_magic(ssl->text);
+	including_size(ssl);
 	line_to_write(&com, ssl);
+
 	return (com);
 }
