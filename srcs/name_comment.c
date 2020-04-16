@@ -6,7 +6,7 @@
 /*   By: almazg <almazg@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 18:00:34 by almazg            #+#    #+#             */
-/*   Updated: 2020/04/14 17:17:56 by almazg           ###   ########.fr       */
+/*   Updated: 2020/04/16 10:36:39 by almazg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,6 @@ void	name_comment(char *line, t_file *ssl)
 		}
 		ft_strdel(&line);
 	}
+	ft_memdel((void**)&n);
+	ft_memdel((void**)&c);
 }
