@@ -6,7 +6,7 @@
 /*   By: lgarse <lgarse@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/08 16:13:47 by almazg            #+#    #+#             */
-/*   Updated: 2020/04/12 13:58:55 by almazg           ###   ########.fr       */
+/*   Updated: 2020/04/16 12:11:16 by almazg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,12 @@ void	line_to_write(t_exec **com,t_file *ssl)
 	int k;
 
 	if (!*com)
+	{
+		write(1, "\n",1);
+		ft_putstr("ERROR NOTHING TO DO");
 		return ;
+	}
+
 	current = *com;
 	while (current)
 	{
