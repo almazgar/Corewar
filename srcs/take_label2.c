@@ -1,20 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error_lex.c                                        :+:      :+:    :+:   */
+/*   take_label2.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgarse <lgarse@student.42.fr>              +#+  +:+       +#+        */
+/*   By: almazg <almazg@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/24 14:15:29 by almazg            #+#    #+#             */
-/*   Updated: 2020/03/24 14:23:25 by almazg           ###   ########.fr       */
+/*   Created: 2020/04/18 14:56:15 by almazg            #+#    #+#             */
+/*   Updated: 2020/04/18 15:00:10 by almazg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/asm.h"
 
-//void	error_lex(t_parser *su)
-//{
-//	ft_putstr("Lexical error \n");
-//	free(su);
-//	exit(1);
-//}
+void		take_label2(char *line, t_file *ssl, int i, t_label **list)
+{
+	char	*name;
+
+	if (!(name = ft_strsub(line, ssl->a, i)))
+		write_error("ERROR_STR_LABEL");
+	add_label(list, cnl(name, ssl->line_byte));
+	ssl->a = ssl->a + i + 1;
+}

@@ -12,18 +12,18 @@
 
 #include "../includes/asm.h"
 
-void	free_exec(t_exec *com)
+void		free_exec(t_exec *com)
 {
 	t_exec	*t;
 
-	while(com)
+	while (com)
 	{
 		t = com;
 		com = com->next;
-        ft_memdel((void**)&(t->a1));
-        ft_memdel((void**)&(t->a2));
-        ft_memdel((void**)&(t->a3));
+		ft_memdel((void**)&(t->a1));
+		ft_memdel((void**)&(t->a2));
+		ft_memdel((void**)&(t->a3));
 		ft_memdel((void **)&t);
 	}
-    ft_memdel((void**)&com);
+	ft_memdel((void**)&com);
 }

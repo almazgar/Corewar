@@ -6,7 +6,7 @@
 /*   By: lgarse <lgarse@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/01 14:34:54 by almazg            #+#    #+#             */
-/*   Updated: 2020/04/08 16:56:18 by almazg           ###   ########.fr       */
+/*   Updated: 2020/04/21 11:52:42 by almazg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,7 @@ void	live(t_file *ssl, char *line, t_exec *com)
 		ssl->a = ssl->a + 1;
 	if (line[ssl->a] == '#' || line[ssl->a] == ';')
 		while (line[ssl->a] && line[ssl->a] != '\n')
-			ssl->a = ssl-> a + 1;
+			ssl->a = ssl->a + 1;
 	else if (line[ssl->a] != '\n' && line[ssl->a] != '\0')
 		write_error("ALLOW_ONLY_ONE_ARGUMENT_TO_LIVE");
-//	ft_putendl("____finish live___");
 }

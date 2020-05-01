@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   data_to_list.c                                     :+:      :+:    :+:   */
+/*   take_opera.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgarse <lgarse@student.42.fr>              +#+  +:+       +#+        */
+/*   By: almazg <almazg@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/24 12:43:21 by almazg            #+#    #+#             */
-/*   Updated: 2020/03/24 12:43:21 by almazg           ###   ########.fr       */
+/*   Created: 2020/04/18 12:28:16 by almazg            #+#    #+#             */
+/*   Updated: 2020/04/18 12:28:16 by almazg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/asm.h"
 
-//char	*data_to_list(t_parser *su, const char *line, unsigned start)
-//{
-//	char	*data;
-//
-//	if (!(data = ft_strsub(line, start, su->column - start)))
-//		ft_putstr("ERR_STR_INIT");
-//	return (data);
-//}
+t_exec	*take_opera(t_file *ssl, char *line, int i, t_exec *com)
+{
+	com = init_exec();
+	com->line_byte = ssl->line_byte;
+	compare(ssl, line, i, com);
+	ssl->line_byte = ssl->line_byte + com->n_bytes;
+	return (com);
+}

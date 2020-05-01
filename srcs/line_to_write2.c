@@ -1,32 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   zero_struct.c                                      :+:      :+:    :+:   */
+/*   line_to_write2.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lgarse <lgarse@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/24 10:19:42 by almazg            #+#    #+#             */
-/*   Updated: 2020/03/24 10:42:53 by almazg           ###   ########.fr       */
+/*   Created: 2020/04/18 12:00:53 by almazg            #+#    #+#             */
+/*   Updated: 2020/04/18 12:00:53 by almazg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "asm.h"
+#include "../includes/asm.h"
 
-//t_parser	*zero_struct(int fd)
-//{
-//	t_parser	*su;
-//
-//	if (!(su = (t_parser *)ft_memalloc(sizeof(t_parser))))
-//		ft_putstr("ERR_PARSER_INIT");
-//	su->fd = fd;
-//	su->row = 0;
-//	su->column = 0;
-//	su->pos = 0;
-//	su->op_pos = 0;
-//	su->name = NULL;
-//	su->comment = NULL;
-//	su->code = NULL;
-//	su->code_size = 0;
-//	su->labels = NULL;
-//	return (su);
-//}
+void	line_to_write2(int k, t_file *ssl, int i, unsigned char *s)
+{
+	if (i == k)
+		write(ssl->text, s, i);
+	else
+		write_error("ERROR_CONVERTING_ARGUMENTS");
+}

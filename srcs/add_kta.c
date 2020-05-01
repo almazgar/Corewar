@@ -12,11 +12,11 @@
 
 #include "../includes/asm.h"
 
-void	add_kta(t_exec **com, int i)
+void		add_kta(t_exec **com, int i)
 {
-	char *temp;
+	char	*temp;
 	t_exec	*c;
-	int j;
+	int		j;
 
 	c = *com;
 	if (i == 1)

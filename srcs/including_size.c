@@ -12,9 +12,9 @@
 
 #include "../includes/asm.h"
 
-void	including_size(t_file *ssl)
+void				including_size(t_file *ssl)
 {
-	int i;
+	int				i;
 	unsigned char	buffer[4];
 
 	i = 0;

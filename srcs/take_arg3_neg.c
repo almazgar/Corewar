@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   negativ.c                                          :+:      :+:    :+:   */
+/*   take_arg3_neg.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: almazg <almazg@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/04/12 13:52:30 by almazg            #+#    #+#             */
-/*   Updated: 2020/04/12 13:52:30 by almazg           ###   ########.fr       */
+/*   Created: 2020/04/18 17:10:21 by almazg            #+#    #+#             */
+/*   Updated: 2020/04/18 17:11:55 by almazg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/asm.h"
 
-long long	negativ(long long nb, int b)
+void	take_arg3_neg(char *line, t_file *ssl, t_exec *com, int i)
 {
-	long long	max;
-
-	if (b == 4)
-		nb = nb % (256L * 256L * 256L * 256L);
-	else if (b == 2)
-		nb = nb % (256L * 256L);
-	max = 256L * 256L;
-	if (b == 4)
-		max = 256L * 256L * 256L * 256L;
-	return (max - nb);
+	while (ft_isdigit(line[ssl->a + i]))
+		i++;
+	if ((i > 1) && is_limit(line[ssl->a + i]))
+	{
+		if (!(com->a3 = ft_strsub(line, ssl->a, i)))
+			write_error("ERROR_ARGUMENT_INIT");
+	}
+	else
+		write_error("WRONG_NUMBER_ARGUMENT");
+	com->ta3 = 4;
+	ssl->a = ssl->a + i;
 }

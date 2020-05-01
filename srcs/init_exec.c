@@ -12,7 +12,7 @@
 
 #include "../includes/asm.h"
 
-t_exec		*init_exec()
+t_exec		*init_exec(void)
 {
 	t_exec *temp;
 

@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "../includes/asm.h"
 
 void	add_comand(t_exec *list, t_exec *new)

@@ -6,7 +6,7 @@
 /*   By: lgarse <lgarse@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/27 10:36:22 by almazg            #+#    #+#             */
-/*   Updated: 2020/03/29 13:13:01 by almazg           ###   ########.fr       */
+/*   Updated: 2020/04/21 11:41:55 by almazg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,8 @@ void	add_label(t_label **list, t_label *new)
 			current = *list;
 			while (current->next)
 			{
-				if (ft_strequ(current->name, new->name))
-					write_error("Double lable");
 				current = current->next;
 			}
-			if (ft_strequ(current->name, new->name))
-				write_error("Double lable");
 			current->next = new;
 		}
 		else

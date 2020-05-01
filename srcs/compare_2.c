@@ -12,7 +12,7 @@
 
 #include "../includes/asm.h"
 
-void 	compare_2(t_file *ssl, char *line, int j, t_exec *com)
+void	compare_2(t_file *ssl, char *line, int j, t_exec *com)
 {
 	if (ft_strncmp(&line[ssl->a - j], "ldi", j) == 0)
 		ldi(ssl, line, com);

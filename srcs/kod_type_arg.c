@@ -12,12 +12,12 @@
 
 #include "../includes/asm.h"
 
-void	kod_type_arg(t_exec **com)
+void		kod_type_arg(t_exec **com)
 {
-	char *temp;
+	char	*temp;
 	t_exec	*c;
-	int b;
-	int s;
+	int		b;
+	int		s;
 
 	c = *com;
 	c->kta = ft_strnew(1);

@@ -16,11 +16,11 @@ void	free_label(t_label *list)
 {
 	t_label	*t;
 
-	while(list)
+	while (list)
 	{
-		t =list;
+		t = list;
 		list = list->next;
-        ft_memdel((void**)&(t->name));
-        ft_memdel((void**)&t);
+		ft_memdel((void**)&(t->name));
+		ft_memdel((void**)&t);
 	}
 }

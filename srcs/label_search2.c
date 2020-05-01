@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   label_search2.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: almazg <almazg@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lgarse <lgarse@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/03 10:32:39 by almazg            #+#    #+#             */
 /*   Updated: 2020/04/03 10:32:39 by almazg           ###   ########.fr       */
@@ -38,4 +38,3 @@ void		label_search2(t_label **list, t_exec **com)
 	}
 	write_error("NO_LABEL");
 }
-

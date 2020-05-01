@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   inst_zjmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgarse <algarse@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lgarse <lgarse@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/04/01 14:40:32 by almazg            #+#    #+#             *//*   Updated: 2020/04/01 15:09:09 by almazg           ###   ########.fr       */
-
+/*   Created: 2020/04/01 14:40:32 by almazg            #+#    #+#             */
+/*   Updated: 2020/04/01 15:09:09 by almazg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,7 @@ void	zjmp(t_file *ssl, char *line, t_exec *com)
 		ssl->a = ssl->a + 1;
 	if (line[ssl->a] == '#' || line[ssl->a] == ';')
 		while (line[ssl->a] && line[ssl->a] != '\n')
-			ssl->a = ssl-> a + 1;
+			ssl->a = ssl->a + 1;
 	else if (line[ssl->a] != '\n' && line[ssl->a] != '\0')
 		write_error("ALLOW_ONLY_ONE_ARGUMENT_TO_ZJMP");
-//	ft_putnbr(ssl->line_byte);
-//	ft_putendl("____finish zjmp___");
 }

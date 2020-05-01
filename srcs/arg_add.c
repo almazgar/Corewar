@@ -12,10 +12,10 @@
 
 #include "../includes/asm.h"
 
-void	arg_add(t_exec **com)
+void		arg_add(t_exec **com)
 {
 	t_exec	*current;
-	int i;
+	int		i;
 
 	if (!*com)
 		return ;
@@ -29,7 +29,7 @@ void	arg_add(t_exec **com)
 			current->dir_size = 4;
 		if (i != 1 && i != 9 && i != 12 && i != 15)
 		{
-			kod_type_arg(&current); // код типа аргумента из бинарного в char
+			kod_type_arg(&current);
 		}
 		current = current->next;
 	}

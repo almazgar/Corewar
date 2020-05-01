@@ -6,7 +6,7 @@
 /*   By: msabre <msabre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/04 18:41:34 by avenonat          #+#    #+#             */
-/*   Updated: 2020/04/16 11:13:40 by almazg           ###   ########.fr       */
+/*   Updated: 2020/04/21 14:19:42 by almazg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 
 void	write_error(char *str)
 {
-	write(1, "\n",1);
+	write(1, "\n", 1);
+	ft_putstr("Error!!!  ");
 	ft_putstr(str);
+	write(1, "\n", 1);
 	exit(0);
 }
